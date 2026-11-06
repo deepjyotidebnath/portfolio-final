@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Deepjyoti Debnath — AI/ML Engineer | Generative AI, LLMs, MLOps</title>
+    <meta name="description" content="Deepjyoti Debnath is an AI/ML Engineer specializing in LLM systems, RAG, MLOps and Computer Vision. Selected for Amazon ML Summer School 2026.">
+    <meta name="author" content="Deepjyoti Debnath">
+    <meta name="theme-color" content="#05070f">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Deepjyoti Debnath — AI/ML Engineer">
+    <meta property="og:description" content="I build RAG pipelines, fine-tune LLMs and ship production-ready ML systems.">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🧠%3C/text%3E%3C/svg%3E">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Deepjyoti Debnath",
+            "jobTitle": "AI/ML Engineer",
+            "email": "mailto:deepjyotidebnathcse@gmail.com",
+            "sameAs": ["https://github.com/deepjyotidebnath", "https://www.linkedin.com/in/deepjyoti-debnath-844279316/", "https://leetcode.com/u/deep23118"],
+            "alumniOf": "Cooch Behar Govt. Engineering College"
+        }
+    </script>
+    <style>
+         :root {
+            --bg: #05070f;
+            --bg2: #0a0f1e;
+            --tx: #e8ecf8;
+            --mu: #8a94b2;
+            --bd: rgba(130, 160, 255, .14);
+            --b: #3b82f6;
+            --c: #22d3ee;
+            --p: #8b5cf6;
+            --g: linear-gradient(120deg, var(--c), var(--b) 50%, var(--p));
+            --f: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --m: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px
+        }
+        
+        body {
+            background: var(--bg);
+            color: var(--tx);
+            font: 16px/1.65 var(--f);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            padding-top: env(safe-area-inset-top)
+        }
+        
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(60% 40% at 80% 0, rgba(59, 130, 246, .16), transparent), radial-gradient(50% 40% at 0 30%, rgba(139, 92, 246, .12), transparent);
+            pointer-events: none;
+            z-index: -1
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+        
+        :focus-visible {
+            outline: 2px solid var(--c);
+            outline-offset: 3px;
+            border-radius: 6px
+        }
+        
+        .skip {
+            position: absolute;
+            left: -999px;
+            top: 8px;
+            background: var(--c);
+            color: #000;
+            padding: 8px 14px;
+            border-radius: 8px;
+            z-index: 100
+        }
+        
+        .skip:focus {
+            left: 8px
+        }
+        
+        .wrap {
+            width: min(1160px, 100% - 40px);
+            margin-inline: auto
+        }
+        
+        section {
+            padding: 112px 0
+        }
+        
+        .eyebrow {
+            font: 500 13px var(--m);
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--c);
+            margin-bottom: 12px
+        }
+        
+        h2 {
+            font-size: clamp(30px, 4.5vw, 46px);
+            line-height: 1.12;
+            letter-spacing: -.02em;
+            margin-bottom: 48px
+        }
+        
+        .grad {
+            background: var(--g);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent
+        }
+        /* nav */
+        
+        header {
+            position: fixed;
+            inset: 0 0 auto;
+            z-index: 50;
+            padding-top: env(safe-area-inset-top);
+            transition: .3s
+        }
+        
+        header.s {
+            background: rgba(5, 7, 15, .78);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--bd)
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px
+        }
+        
+        .logo {
+            font-weight: 700;
+            letter-spacing: -.01em
+        }
+        
+        .logo b {
+            color: var(--c)
+        }
+        
+        .links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            padding: 0
+        }
+        
+        .links a {
+            color: var(--mu);
+            font-size: 14px;
+            transition: .2s
+        }
+        
+        .links a:hover,
+        .links a.on {
+            color: var(--tx)
+        }
+        
+        .burger {
+            display: none;
+            background: none;
+            border: 1px solid var(--bd);
+            color: var(--tx);
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer
+        }
+        /* buttons */
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 15px;
+            border: 1px solid var(--bd);
+            background: rgba(255, 255, 255, .03);
+            cursor: pointer;
+            color: var(--tx);
+            font-family: inherit;
+            transition: .25s
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            border-color: var(--c);
+            box-shadow: 0 8px 28px -8px rgba(34, 211, 238, .45)
+        }
+        
+        .btn.pr {
+            background: var(--g);
+            border: 0;
+            color: #04101f
+        }
+        
+        .btn.sm {
+            padding: 9px 16px;
+            font-size: 14px
+        }
+        /* hero */
+        
+        .hero {
+            min-height: 100svh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 120px 0 80px;
+            overflow: hidden
+        }
+        
+        #net {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity: .8
+        }
+        
+        .hero .wrap {
+            position: relative;
+            display: grid;
+            gap: 28px;
+            max-width: 900px;
+            margin-left: max(20px, calc((100% - 1160px)/2))
+        }
+        
+        .avail {
+            display: inline-flex;
+            gap: 10px;
+            align-items: center;
+            width: fit-content;
+            padding: 7px 14px;
+            border: 1px solid var(--bd);
+            border-radius: 99px;
+            font-size: 13px;
+            color: var(--mu);
+            background: rgba(10, 15, 30, .6);
+            backdrop-filter: blur(8px)
+        }
+        
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #34d399;
+            box-shadow: 0 0 0 0 rgba(52, 211, 153, .6);
+            animation: pu 2s infinite
+        }
+        
+        @keyframes pu {
+            70% {
+                box-shadow: 0 0 0 9px transparent
+            }
+        }
+        
+        h1 {
+            font-size: clamp(44px, 8.5vw, 92px);
+            line-height: 1.02;
+            letter-spacing: -.035em
+        }
+        
+        .role {
+            font: 500 clamp(14px, 2vw, 17px) var(--m);
+            color: var(--c)
+        }
+        
+        .tag {
+            font-size: clamp(17px, 2.2vw, 21px);
+            color: var(--mu);
+            max-width: 640px
+        }
+        
+        .cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 6px
+        }
+        
+        .hero [data-in] {
+            opacity: 0;
+            transform: translateY(22px);
+            animation: in .9s forwards cubic-bezier(.2, .7, .2, 1)
+        }
+        
+        @keyframes in {
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+        /* stats */
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1px;
+            background: var(--bd);
+            border: 1px solid var(--bd);
+            border-radius: 18px;
+            overflow: hidden;
+            margin-top: -20px
+        }
+        
+        .stat {
+            background: var(--bg2);
+            padding: 28px 20px;
+            text-align: center
+        }
+        
+        .stat b {
+            display: block;
+            font-size: clamp(28px, 4vw, 40px);
+            letter-spacing: -.02em
+        }
+        
+        .stat span {
+            font-size: 13px;
+            color: var(--mu)
+        }
+        /* about */
+        
+        .about {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 56px;
+            align-items: start
+        }
+        
+        .about p {
+            color: var(--mu);
+            font-size: 18px
+        }
+        
+        .about p+p {
+            margin-top: 18px
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, .035);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--bd);
+            border-radius: 18px;
+            padding: 26px
+        }
+        
+        .glass h3 {
+            font-size: 14px;
+            font-family: var(--m);
+            color: var(--c);
+            margin-bottom: 12px;
+            font-weight: 500
+        }
+        
+        .glass li {
+            list-style: none;
+            color: var(--mu);
+            padding: 5px 0
+        }
+        
+        .glass ul {
+            padding: 0
+        }
+        /* skills */
+        
+        .sk {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 18px
+        }
+        
+        .card {
+            background: var(--bg2);
+            border: 1px solid var(--bd);
+            border-radius: 18px;
+            padding: 24px;
+            transition: .3s
+        }
+        
+        .card:hover {
+            border-color: rgba(34, 211, 238, .4);
+            transform: translateY(-3px)
+        }
+        
+        .card h3 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 16px;
+            margin-bottom: 16px
+        }
+        
+        .ic {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, rgba(34, 211, 238, .2), rgba(139, 92, 246, .2));
+            border: 1px solid var(--bd);
+            color: var(--c);
+            font: 600 13px var(--m)
+        }
+        
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px
+        }
+        
+        .chip {
+            font-size: 13px;
+            padding: 5px 11px;
+            border-radius: 8px;
+            background: rgba(59, 130, 246, .1);
+            border: 1px solid rgba(59, 130, 246, .22);
+            color: #c3d3ff
+        }
+        /* projects */
+        
+        .pj {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px
+        }
+        
+        .proj {
+            display: flex;
+            flex-direction: column;
+            background: var(--bg2);
+            border: 1px solid var(--bd);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: .35s
+        }
+        
+        .proj:hover {
+            transform: translateY(-6px);
+            border-color: hsla(var(--h), 90%, 65%, .55);
+            box-shadow: 0 24px 60px -24px hsla(var(--h), 90%, 60%, .5)
+        }
+        
+        .vis {
+            aspect-ratio: 16/9;
+            position: relative;
+            background: radial-gradient(90% 90% at 70% 0, hsla(var(--h), 90%, 60%, .28), transparent), #070b17;
+            border-bottom: 1px solid var(--bd);
+            padding: 14px;
+            overflow: hidden
+        }
+        
+        .vis .bar {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            font: 11px var(--m);
+            color: var(--mu)
+        }
+        
+        .vis .bar i {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #2a3350
+        }
+        
+        .vis .bar em {
+            margin-left: 8px;
+            font-style: normal;
+            background: rgba(255, 255, 255, .05);
+            padding: 2px 10px;
+            border-radius: 6px
+        }
+        
+        .vis svg {
+            position: absolute;
+            inset: 44px 14px 14px;
+            width: calc(100% - 28px);
+            height: calc(100% - 58px)
+        }
+        
+        .vis .big {
+            position: absolute;
+            right: 18px;
+            bottom: 12px;
+            font: 700 28px var(--m);
+            color: hsl(var(--h), 90%, 70%)
+        }
+        
+        .proj:hover .vis svg {
+            transform: scale(1.04)
+        }
+        
+        .vis svg {
+            transition: .5s
+        }
+        
+        .pb {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            flex: 1
+        }
+        
+        .num {
+            font: 12px var(--m);
+            color: var(--mu)
+        }
+        
+        .pb h3 {
+            font-size: 20px;
+            line-height: 1.3;
+            letter-spacing: -.01em
+        }
+        
+        .pb p {
+            color: var(--mu);
+            font-size: 15px
+        }
+        
+        .res {
+            width: fit-content;
+            font: 600 12px var(--m);
+            padding: 5px 11px;
+            border-radius: 99px;
+            color: hsl(var(--h), 90%, 75%);
+            background: hsla(var(--h), 90%, 60%, .12);
+            border: 1px solid hsla(var(--h), 90%, 60%, .3)
+        }
+        
+        details {
+            border-top: 1px solid var(--bd);
+            padding-top: 12px;
+            font-size: 14px;
+            color: var(--mu)
+        }
+        
+        summary {
+            cursor: pointer;
+            color: var(--tx);
+            font-weight: 600;
+            list-style: none
+        }
+        
+        summary::after {
+            content: " +";
+            color: var(--c)
+        }
+        
+        details[open] summary::after {
+            content: " −"
+        }
+        
+        details dl {
+            display: grid;
+            grid-template-columns: 90px 1fr;
+            gap: 8px 12px;
+            margin-top: 12px
+        }
+        
+        details dt {
+            color: var(--c);
+            font-family: var(--m);
+            font-size: 12px;
+            padding-top: 2px
+        }
+        
+        details dd {
+            margin: 0
+        }
+        
+        .acts {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+            flex-wrap: wrap
+        }
+        /* timeline */
+        
+        .tl {
+            position: relative;
+            padding-left: 34px
+        }
+        
+        .tl::before {
+            content: "";
+            position: absolute;
+            left: 7px;
+            top: 6px;
+            bottom: 6px;
+            width: 2px;
+            background: linear-gradient(var(--c), var(--p), transparent)
+        }
+        
+        .ev {
+            position: relative;
+            margin-bottom: 22px
+        }
+        
+        .ev::before {
+            content: "";
+            position: absolute;
+            left: -34px;
+            top: 26px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--bg);
+            border: 2px solid var(--c);
+            box-shadow: 0 0 14px rgba(34, 211, 238, .6)
+        }
+        
+        .ev .when {
+            font: 13px var(--m);
+            color: var(--c)
+        }
+        
+        .ev h3 {
+            font-size: 19px;
+            margin: 4px 0 12px
+        }
+        
+        .ev ul {
+            padding-left: 18px;
+            color: var(--mu)
+        }
+        
+        .ev li {
+            margin: 6px 0
+        }
+        /* amazon */
+        
+        .aws {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+            padding: 36px;
+            border-radius: 22px;
+            border: 1px solid rgba(139, 92, 246, .35);
+            background: linear-gradient(120deg, rgba(59, 130, 246, .12), rgba(139, 92, 246, .14))
+        }
+        
+        .aws .tr {
+            font-size: 48px
+        }
+        
+        .aws h3 {
+            font-size: 24px;
+            margin-bottom: 6px
+        }
+        
+        .aws p {
+            color: var(--mu)
+        }
+        /* edu */
+        
+        .ed {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px
+        }
+        
+        .ed h3 {
+            font-size: 17px;
+            margin-bottom: 4px
+        }
+        
+        .ed .sub {
+            color: var(--mu);
+            font-size: 14px
+        }
+        
+        .ed .gp {
+            margin-top: 10px;
+            font: 13px var(--m);
+            color: var(--c)
+        }
+        
+        .ed ul {
+            padding: 0;
+            margin-top: 10px
+        }
+        
+        .ed li {
+            list-style: none;
+            padding: 7px 0 7px 22px;
+            position: relative;
+            color: var(--mu);
+            font-size: 14px;
+            border-bottom: 1px solid var(--bd)
+        }
+        
+        .ed li:last-child {
+            border: 0
+        }
+        
+        .ed li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--c)
+        }
+        /* profiles */
+        
+        .pf {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px
+        }
+        
+        .pf a.card {
+            display: block
+        }
+        
+        .pf b {
+            display: block;
+            font-size: 34px;
+            margin: 8px 0 2px
+        }
+        
+        .pf small {
+            color: var(--mu)
+        }
+        /* contact */
+        
+        .ct {
+            text-align: center;
+            padding: 72px 28px;
+            border-radius: 28px;
+            border: 1px solid var(--bd);
+            background: radial-gradient(70% 90% at 50% 0, rgba(59, 130, 246, .18), transparent), var(--bg2)
+        }
+        
+        .ct h2 {
+            margin-bottom: 14px
+        }
+        
+        .ct p {
+            color: var(--mu);
+            margin-bottom: 30px
+        }
+        
+        .ct .cta {
+            justify-content: center
+        }
+        
+        footer {
+            border-top: 1px solid var(--bd);
+            padding: 32px 0 calc(32px + env(safe-area-inset-bottom));
+            color: var(--mu);
+            font-size: 14px
+        }
+        
+        footer .wrap {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+        
+        footer a:hover {
+            color: var(--c)
+        }
+        /* reveal */
+        
+        .rv {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity .8s, transform .8s cubic-bezier(.2, .7, .2, 1)
+        }
+        
+        .rv.v {
+            opacity: 1;
+            transform: none
+        }
+        
+        @media(max-width:860px) {
+            section {
+                padding: 80px 0
+            }
+            .about {
+                grid-template-columns: 1fr
+            }
+            .stats {
+                grid-template-columns: repeat(2, 1fr)
+            }
+            .stat:last-child {
+                grid-column: 1/-1
+            }
+            .burger {
+                display: block
+            }
+            .links {
+                position: fixed;
+                inset: calc(68px + env(safe-area-inset-top)) 0 auto;
+                flex-direction: column;
+                gap: 0;
+                background: rgba(5, 7, 15, .97);
+                border-bottom: 1px solid var(--bd);
+                transform: translateY(-130%);
+                transition: .35s;
+                visibility: hidden
+            }
+            .links.o {
+                transform: none;
+                visibility: visible
+            }
+            .links a {
+                display: block;
+                padding: 16px 24px;
+                font-size: 16px
+            }
+            .aws {
+                flex-direction: column;
+                text-align: center
+            }
+            .pj {
+                grid-template-columns: 1fr
+            }
+        }
+        
+        @media(prefers-reduced-motion:reduce) {
+            * {
+                animation: none!important;
+                transition: none!important;
+                scroll-behavior: auto!important
+            }
+            .rv,
+            .hero [data-in] {
+                opacity: 1;
+                transform: none
+            }
+        }
+        /* ---- v2: reference-style hero, live profiles ---- */
+        
+        .logo {
+            font: 800 20px var(--f);
+            letter-spacing: .02em;
+            background: linear-gradient(90deg, #8b5cf6, #22d3ee);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent
+        }
+        
+        .btn.pr {
+            background: linear-gradient(120deg, #7c3aed, #4f6ef7);
+            color: #fff;
+            box-shadow: 0 10px 30px -10px rgba(124, 58, 237, .7)
+        }
+        
+        .sr {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0 0 0 0)
+        }
+        
+        .hero {
+            justify-content: center;
+            text-align: center;
+            padding: 130px 0 100px
+        }
+        
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(120, 150, 255, .07) 1px, transparent 1px), linear-gradient(90deg, rgba(120, 150, 255, .07) 1px, transparent 1px);
+            background-size: 56px 56px;
+            -webkit-mask-image: radial-gradient(70% 60% at 50% 45%, #000, transparent);
+            mask-image: radial-gradient(70% 60% at 50% 45%, #000, transparent);
+            pointer-events: none
+        }
+        
+        #net {
+            opacity: .55
+        }
+        
+        .hwrap {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            justify-items: center;
+            gap: 26px;
+            width: min(920px, 100% - 40px);
+            margin-inline: auto
+        }
+        
+        .avail {
+            font: 500 12px var(--m);
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: #a78bfa;
+            border-color: rgba(139, 92, 246, .4)
+        }
+        
+        .role {
+            font: 500 clamp(18px, 3vw, 30px)/1.35 var(--f);
+            color: #c4cbe0;
+            min-height: 2.7em
+        }
+        
+        .caret {
+            display: inline-block;
+            width: 2px;
+            height: 1em;
+            background: var(--p);
+            margin-left: 4px;
+            vertical-align: -.12em;
+            animation: bl 1s steps(1) infinite
+        }
+        
+        @keyframes bl {
+            50% {
+                opacity: 0
+            }
+        }
+        
+        .tag {
+            margin-inline: auto
+        }
+        
+        .cta {
+            justify-content: center
+        }
+        
+        .soc,
+        .ni {
+            display: flex;
+            gap: 10px;
+            align-items: center
+        }
+        
+        .ni {
+            margin-left: 24px;
+            padding-left: 24px;
+            border-left: 1px solid var(--bd)
+        }
+        
+        .ib {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border: 1px solid var(--bd);
+            border-radius: 12px;
+            color: var(--mu);
+            transition: .25s;
+            font-size: 18px
+        }
+        
+        .ni .ib {
+            border: 0;
+            width: 36px;
+            height: 36px
+        }
+        
+        .ib:hover {
+            color: var(--c);
+            border-color: var(--c);
+            transform: translateY(-2px)
+        }
+        
+        .ib svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor
+        }
+        
+        .sh {
+            position: absolute;
+            bottom: 26px;
+            left: 50%;
+            transform: translateX(-50%);
+            font: 600 11px var(--m);
+            letter-spacing: .18em;
+            color: var(--mu);
+            text-transform: uppercase;
+            display: grid;
+            justify-items: center;
+            gap: 10px;
+            z-index: 1
+        }
+        
+        .ms {
+            width: 22px;
+            height: 34px;
+            border: 2px solid #2a3350;
+            border-radius: 12px;
+            position: relative
+        }
+        
+        .ms i {
+            position: absolute;
+            left: 50%;
+            top: 6px;
+            width: 4px;
+            height: 6px;
+            margin-left: -2px;
+            border-radius: 3px;
+            background: var(--p);
+            animation: sc 1.6s infinite
+        }
+        
+        @keyframes sc {
+            60% {
+                transform: translateY(10px);
+                opacity: 0
+            }
+        }
+        
+        .act {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 22px
+        }
+        
+        .act .card {
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px
+        }
+        
+        .act .btn {
+            width: fit-content
+        }
+        
+        .act-b {
+            display: grid;
+            gap: 20px;
+            flex: 1;
+            align-content: start
+        }
+        
+        .ah {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px
+        }
+        
+        .ah h3 {
+            font-size: 18px
+        }
+        
+        .live {
+            font: 600 11px var(--m);
+            padding: 4px 10px;
+            border-radius: 99px;
+            border: 1px solid var(--bd);
+            color: var(--mu)
+        }
+        
+        .live.ok {
+            color: #34d399;
+            border-color: rgba(52, 211, 153, .4)
+        }
+        
+        .kp {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+            gap: 10px
+        }
+        
+        .kp div {
+            background: rgba(255, 255, 255, .03);
+            border: 1px solid var(--bd);
+            border-radius: 12px;
+            padding: 14px;
+            text-align: center
+        }
+        
+        .kp b {
+            display: block;
+            font-size: 26px;
+            letter-spacing: -.02em
+        }
+        
+        .kp span {
+            font-size: 12px;
+            color: var(--mu)
+        }
+        
+        .bars {
+            display: grid;
+            gap: 10px
+        }
+        
+        .br {
+            display: grid;
+            grid-template-columns: 84px 1fr 40px;
+            gap: 10px;
+            align-items: center;
+            font-size: 13px;
+            color: var(--mu)
+        }
+        
+        .br span:last-child {
+            text-align: right
+        }
+        
+        .tr2 {
+            height: 8px;
+            border-radius: 9px;
+            background: rgba(255, 255, 255, .06);
+            overflow: hidden
+        }
+        
+        .tr2 i {
+            display: block;
+            height: 100%;
+            border-radius: 9px;
+            background: var(--g);
+            width: 0;
+            transition: width 1.2s cubic-bezier(.2, .7, .2, 1)
+        }
+        
+        .rp {
+            display: grid;
+            gap: 10px
+        }
+        
+        .rp a {
+            display: block;
+            padding: 12px 14px;
+            border: 1px solid var(--bd);
+            border-radius: 12px;
+            transition: .25s
+        }
+        
+        .rp a:hover {
+            border-color: var(--c);
+            transform: translateX(3px)
+        }
+        
+        .rp b {
+            font-size: 14px
+        }
+        
+        .rp small {
+            display: block;
+            color: var(--mu);
+            font-size: 12.5px
+        }
+        
+        .note {
+            font-size: 12.5px;
+            color: var(--mu)
+        }
+        
+        @media(max-width:860px) {
+            .ni {
+                margin-left: auto;
+                padding-left: 0;
+                border: 0;
+                margin-right: 10px
+            }
+            .hero {
+                padding-top: 110px
+            }
+            .sh {
+                display: none
+            }
+            .act {
+                grid-template-columns: 1fr
+            }
+            .kp b {
+                font-size: 22px
+            }
+        }
+        
+        @media(max-width:420px) {
+            .ni .ib {
+                width: 32px
+            }
+        }
+        /* ---- hero background image (inline SVG, original artwork) ---- */
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNTcwIj48ZGVmcz48ZmlsdGVyIGlkPSJnIiB4PSItMjAlIiB5PSItMjAlIiB3aWR0aD0iMTQwJSIgaGVpZ2h0PSIxNDAlIj48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSI1Ii8+PC9maWx0ZXI+PHJhZGlhbEdyYWRpZW50IGlkPSJyIiBjeD0iNTAlIiBjeT0iNDglIiByPSI1MCUiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzNiODJmNiIgc3RvcC1vcGFjaXR5PSIuMjgiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMzYjgyZjYiIHN0b3Atb3BhY2l0eT0iMCIvPjwvcmFkaWFsR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNTcwIiBmaWxsPSJ1cmwoI3IpIi8+PGcgZmlsdGVyPSJ1cmwoI2cpIiBvcGFjaXR5PSIuOSI+PGNpcmNsZSBjeD0iNjM4IiBjeT0iMjQxIiByPSI1IiBmaWxsPSIjOGI1Y2Y2Ii8+PGNpcmNsZSBjeD0iMzg0IiBjeT0iMzI3IiByPSI1IiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iMzg4IiBjeT0iMjY4IiByPSI1IiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iNjE4IiBjeT0iMzA4IiByPSI1IiBmaWxsPSIjOGI1Y2Y2Ii8+PGNpcmNsZSBjeD0iNTkwIiBjeT0iMjcyIiByPSI1IiBmaWxsPSIjOGI1Y2Y2Ii8+PGNpcmNsZSBjeD0iNDUwIiBjeT0iMzIxIiByPSI1IiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iNTQ4IiBjeT0iMzgyIiByPSI1IiBmaWxsPSIjOGI1Y2Y2Ii8+PGNpcmNsZSBjeD0iNDIyIiBjeT0iMjgxIiByPSI1IiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iNDM2IiBjeT0iMTkwIiByPSI1IiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iMzE5IiBjeT0iMTk5IiByPSI1IiBmaWxsPSIjMjJkM2VlIi8+PGNpcmNsZSBjeD0iNDg5IiBjeT0iMTgzIiByPSI1IiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iNDc4IiBjeT0iMzkxIiByPSI1IiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iNTE1IiBjeT0iMzEyIiByPSI1IiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iNDg1IiBjeT0iMzYzIiByPSI1IiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iNTQyIiBjeT0iMzU3IiByPSI1IiBmaWxsPSIjOGI1Y2Y2Ii8+PGNpcmNsZSBjeD0iMzU4IiBjeT0iMjcxIiByPSI1IiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iMjk1IiBjeT0iMzgzIiByPSI1IiBmaWxsPSIjMjJkM2VlIi8+PGNpcmNsZSBjeD0iNTE3IiBjeT0iMzUxIiByPSI1IiBmaWxsPSIjM2I4MmY2Ii8+PC9nPjxnIHN0cm9rZS13aWR0aD0iLjkiIG9wYWNpdHk9Ii41NSI+PGxpbmUgeDE9IjQxMSIgeTE9IjMzMyIgeDI9IjQxNCIgeTI9IjM2MCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjE3OSIgeTE9IjMzNSIgeDI9IjE1NCIgeTI9IjMxMSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjUwNiIgeTE9IjQxMSIgeDI9IjQ3MiIgeTI9IjQxNSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjU2NyIgeTE9IjE5MyIgeDI9IjU5OCIgeTI9IjE4MCIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjMxOSIgeTE9IjIyOCIgeDI9IjM0MyIgeTI9IjIwOSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjIxMSIgeTE9IjI4NSIgeDI9IjE4MiIgeTI9IjI3OSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjMxMSIgeTE9IjM1MCIgeDI9IjM0MiIgeTI9IjM1MCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjE3MCIgeTE9IjI1MCIgeDI9IjE5NiIgeTI9IjI0MiIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjQ0NCIgeTE9IjE2NiIgeDI9IjQyMCIgeTI9IjE2MyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjM4OSIgeTE9IjM2OCIgeDI9IjM2MiIgeTI9IjM2OSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjMxMSIgeTE9IjM1MCIgeDI9IjMwOSIgeTI9IjMyNCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjQ1MCIgeTE9IjMyMSIgeDI9IjQ1NCIgeTI9IjI5NyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjYwOCIgeTE9IjIzNyIgeDI9IjU4NCIgeTI9IjI0MCIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjQyMiIgeTE9IjM5MCIgeDI9IjQxNCIgeTI9IjM2MCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjI4OSIgeTE9IjQwOSIgeDI9IjI1MSIgeTI9IjM5NSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjYyOCIgeTE9IjI2MyIgeDI9IjYzOCIgeTI9IjI0MSIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjQ5MiIgeTE9IjMyNCIgeDI9IjQ3NCIgeTI9IjM0MSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjM2NCIgeTE9IjQxMCIgeDI9IjM5NCIgeTI9IjQwNCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjMyNiIgeTE9IjMwNiIgeDI9IjI5NSIgeTI9IjI5OCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjI5NiIgeTE9IjI2NyIgeDI9IjI5NSIgeTI9IjI5OCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjE3OSIgeTE9IjMzNSIgeDI9IjE5MCIgeTI9IjMxMSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjI4OSIgeTE9IjE3NyIgeDI9IjI3MyIgeTI9IjE1NSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjIyNiIgeTE9IjI0MCIgeDI9IjIyOSIgeTI9IjI2OCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjM3MSIgeTE9IjMwMyIgeDI9IjM4NCIgeTI9IjMyNyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjI5NSIgeTE9IjM4MyIgeDI9IjI3MCIgeTI9IjM3OCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjYxMyIgeTE9IjMzNCIgeDI9IjY0MSIgeTI9IjMyOSIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjE1NCIgeTE9IjMxMSIgeDI9IjE5MCIgeTI9IjMxMSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjM3NCIgeTE9IjE5NiIgeDI9IjM5MCIgeTI9IjE3NCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjUxMiIgeTE9IjIxMiIgeDI9IjUxMyIgeTI9IjI0OSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjI0MyIgeTE9IjM1OCIgeDI9IjI3MCIgeTI9IjM3OCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjYwNCIgeTE9IjM1OSIgeDI9IjYxMyIgeTI9IjMzNCIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjIxNCIgeTE9IjM2OCIgeDI9IjIxNSIgeTI9IjMyNSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjMyNiIgeTE9IjMwNiIgeDI9IjM0NCIgeTI9IjMyMyIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjU2NyIgeTE9IjE5MyIgeDI9IjU0MSIgeTI9IjE4MSIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjQ0NCIgeTE9IjE2NiIgeDI9IjQzNiIgeTI9IjE5MCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjQwOSIgeTE9IjI1MyIgeDI9IjM4OCIgeTI9IjI2OCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjUxMyIgeTE9IjI0OSIgeDI9IjU0NyIgeTI9IjI2MyIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjQzNiIgeTE9IjI2MCIgeDI9IjQyMiIgeTI9IjI4MSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjIyNiIgeTE9IjI0MCIgeDI9IjE5NiIgeTI9IjI0MiIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjI1MCIgeTE9IjE2MiIgeDI9IjI2NCIgeTI9IjE4NiIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjYxMyIgeTE9IjMzNCIgeDI9IjYxOCIgeTI9IjMwOCIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjUxNyIgeTE9IjM4MiIgeDI9IjUwNiIgeTI9IjQxMSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjIxNCIgeTE9IjM2OCIgeDI9IjI0MyIgeTI9IjM1OCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjQ4NSIgeTE9IjM2MyIgeDI9IjQ3NCIgeTI9IjM0MSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjQ3NSIgeTE9IjIzNSIgeDI9IjQ3NSIgeTI9IjI3OCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjI2MyIgeTE9IjIyMSIgeDI9IjI4NyIgeTI9IjIzNSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjUxMiIgeTE9IjIxMiIgeDI9IjUzOSIgeTI9IjIxNSIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjMyNSIgeTE9IjE1NCIgeDI9IjMzNiIgeTI9IjE4MSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjQyMiIgeTE9IjI4MSIgeDI9IjQwOSIgeTI9IjI1MyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjIxNSIgeTE9IjMyNSIgeDI9IjE5NiIgeTI9IjM1MiIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjU0MiIgeTE9IjM1NyIgeDI9IjU3NSIgeTI9IjM2OSIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjQ0NiIgeTE9IjM1NSIgeDI9IjQ1MiIgeTI9IjM4MiIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjE4MiIgeTE9IjI3OSIgeDI9IjE1NCIgeTI9IjI3OSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjIxNCIgeTE9IjE4MiIgeDI9IjI0NiIgeTI9IjIwNCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjUxMSIgeTE9IjE2NiIgeDI9IjQ4OSIgeTI9IjE4MyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjM5MCIgeTE9IjE3NCIgeDI9IjQxMiIgeTI9IjE5MCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjI2MyIgeTE9IjIyMSIgeDI9IjI4NyIgeTI9IjIwOCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjYwOCIgeTE9IjIzNyIgeDI9IjYyOCIgeTI9IjI2MyIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjI5NSIgeTE9IjI5OCIgeDI9IjI4MiIgeTI9IjMyMSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjU2NyIgeTE9IjI5MiIgeDI9IjU3MSIgeTI9IjMyNyIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjM0MiIgeTE9IjM1MCIgeDI9IjM2NiIgeTI9IjM0NCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjI2NyIgeTE9IjI5OCIgeDI9IjI4MiIgeTI9IjMyMSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjE3MCIgeTE9IjI1MCIgeDI9IjE1NCIgeTI9IjI3OSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjU4NCIgeTE9IjI0MCIgeDI9IjU3MCIgeTI9IjIxNiIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjMyMyIgeTE9IjI2MiIgeDI9IjMxOSIgeTI9IjIyOCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjM3MSIgeTE9IjMwMyIgeDI9IjM0NCIgeTI9IjMyMyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjI3MyIgeTE9IjE1NSIgeDI9IjI2NCIgeTI9IjE4NiIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjE3MCIgeTE9IjI1MCIgeDI9IjE2NSIgeTI9IjIxNyIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjIyOSIgeTE9IjI2OCIgeDI9IjI0MSIgeTI9IjI4OSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjMzNCIgeTE9IjQzMSIgeDI9IjM0NCIgeTI9IjQ1NiIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjQ0NSIgeTE9IjQxOSIgeDI9IjQxNyIgeTI9IjQxOCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjI0NiIgeTE9IjMxOCIgeDI9IjI2NyIgeTI9IjI5OCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjUzNSIgeTE9IjE1NyIgeDI9IjU2NSIgeTI9IjE2OCIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjQxMiIgeTE9IjE5MCIgeDI9IjQyMCIgeTI9IjE2MyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjQ5MiIgeTE9IjMyNCIgeDI9IjUxNSIgeTI9IjMxMiIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjI2MiIgeTE9IjI3MCIgeDI9IjI0MSIgeTI9IjI4OSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjI4OSIgeTE9IjQwOSIgeDI9IjMyMyIgeTI9IjM5MyIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjQxMSIgeTE9IjMzMyIgeDI9IjM4NCIgeTI9IjMyNyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjU2NyIgeTE9IjE5MyIgeDI9IjU2NSIgeTI9IjE2OCIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjQ1OCIgeTE9IjIwMiIgeDI9IjQ4OCIgeTI9IjIwOCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjE5NiIgeTE9IjI0MiIgeDI9IjE2NSIgeTI9IjIxNyIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjM1NyIgeTE9IjIzMCIgeDI9IjM3MiIgeTI9IjI1MCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjYxOCIgeTE9IjMwOCIgeDI9IjY0MiIgeTI9IjI5OCIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjI4OSIgeTE9IjE3NyIgeDI9IjI4NyIgeTI9IjIwOCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjI0NiIgeTE9IjIwNCIgeDI9IjIxMyIgeTI9IjIxMCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjE3MCIgeTE9IjI1MCIgeDI9IjE4MiIgeTI9IjI3OSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjQ1OCIgeTE9IjIwMiIgeDI9IjQzNiIgeTI9IjE5MCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjQ0MCIgeTE9IjIyMyIgeDI9IjQxNiIgeTI9IjIxNyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjQ0NiIgeTE9IjM1NSIgeDI9IjQ3NCIgeTI9IjM0MSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjMyNiIgeTE9IjMwNiIgeDI9IjMwOSIgeTI9IjMyNCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjM1NyIgeTE9IjIzMCIgeDI9IjM4MiIgeTI9IjIyNyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjYxMyIgeTE9IjMzNCIgeDI9IjU5MyIgeTI9IjMxNCIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjQ2OSIgeTE9IjQ0MCIgeDI9IjQ3MiIgeTI9IjQxNSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjQ1OCIgeTE9IjIwMiIgeDI9IjQ0MCIgeTI9IjIyMyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjQyMiIgeTE9IjI4MSIgeDI9IjQyNiIgeTI9IjMwNiIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjU0MSIgeTE9IjE4MSIgeDI9IjU2NSIgeTI9IjE2OCIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjM1OCIgeTE9IjI3MSIgeDI9IjM3MiIgeTI9IjI1MCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjQ1OCIgeTE9IjIwMiIgeDI9IjQ2OSIgeTI9IjE2MyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjYxOCIgeTE9IjMwOCIgeDI9IjY0MSIgeTI9IjMyOSIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjM1NyIgeTE9IjIzMCIgeDI9IjM0MyIgeTI9IjIwOSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjI4MSIgeTE9IjM0OCIgeDI9IjI3MCIgeTI9IjM3OCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjQ1MCIgeTE9IjMyMSIgeDI9IjQ3NCIgeTI9IjM0MSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjMxMSIgeTE9IjM1MCIgeDI9IjI4MSIgeTI9IjM0OCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjQzNiIgeTE9IjQ2MSIgeDI9IjQwNiIgeTI9IjQ2OSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjI0MyIgeTE9IjM1OCIgeDI9IjI1MSIgeTI9IjM5NSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjM3NCIgeTE9IjE5NiIgeDI9IjM4MiIgeTI9IjIyNyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjU2MCIgeTE9IjI0MiIgeDI9IjU4NCIgeTI9IjI0MCIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjU0MSIgeTE9IjE4MSIgeDI9IjUzNSIgeTI9IjE1NyIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjIxMSIgeTE9IjI4NSIgeDI9IjE5MCIgeTI9IjMxMSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjM1MCIgeTE9IjM5MCIgeDI9IjMyMyIgeTI9IjM5MyIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjU5MCIgeTE9IjI3MiIgeDI9IjYyOCIgeTI9IjI2MyIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjU2MCIgeTE9IjI0MiIgeDI9IjU3MCIgeTI9IjIxNiIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjM1MCIgeTE9IjM5MCIgeDI9IjM2MiIgeTI9IjM2OSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjM2NCIgeTE9IjQxMCIgeDI9IjM1OSIgeTI9IjQzNCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjM2NCIgeTE9IjQxMCIgeDI9IjM1MCIgeTI9IjM5MCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjM4MiIgeTE9IjIyNyIgeDI9IjM3MiIgeTI9IjI1MCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjM3MSIgeTE9IjMwMyIgeDI9IjM1OCIgeTI9IjI3MSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjMzNiIgeTE9IjE4MSIgeDI9IjM1MyIgeTI9IjE2MyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjQ3OCIgeTE9IjM5MSIgeDI9IjQ3MiIgeTI9IjQxNSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjUzMyIgeTE9IjQwMSIgeDI9IjUxNyIgeTI9IjM4MiIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjM2NiIgeTE9IjM0NCIgeDI9IjM4NCIgeTI9IjMyNyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjUzOSIgeTE9IjIxNSIgeDI9IjU3MCIgeTI9IjIxNiIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjQzNiIgeTE9IjE5MCIgeDI9IjQxNiIgeTI9IjIxNyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjU0MSIgeTE9IjMxMSIgeDI9IjU2NyIgeTI9IjI5MiIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjUxNyIgeTE9IjM4MiIgeDI9IjUxNyIgeTI9IjM1MSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjE4OCIgeTE9IjIwOCIgeDI9IjE2NSIgeTI9IjIxNyIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjI2MiIgeTE9IjI3MCIgeDI9IjI2NyIgeTI9IjI5OCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjI4OSIgeTE9IjE3NyIgeDI9IjI2NCIgeTI9IjE4NiIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjUxNSIgeTE9IjMxMiIgeDI9IjU0MSIgeTI9IjMxMSIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjU2NyIgeTE9IjI5MiIgeDI9IjU5MyIgeTI9IjMxNCIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjIxNCIgeTE9IjM2OCIgeDI9IjE5NiIgeTI9IjM1MiIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjU3NSIgeTE9IjM2OSIgeDI9IjU0OCIgeTI9IjM4MiIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjM3NyIgeTE9IjQ1NyIgeDI9IjM0NCIgeTI9IjQ1NiIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjQ3OCIgeTE9IjM5MSIgeDI9IjQ1MiIgeTI9IjM4MiIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjYwNCIgeTE9IjM1OSIgeDI9IjU3MSIgeTI9IjMyNyIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjUzMyIgeTE9IjQwMSIgeDI9IjUwNiIgeTI9IjQxMSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjU3MSIgeTE9IjMyNyIgeDI9IjU5MyIgeTI9IjMxNCIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjQ0NSIgeTE9IjQxOSIgeDI9IjQ2OSIgeTI9IjQ0MCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjI4NyIgeTE9IjIzNSIgeDI9IjI5NiIgeTI9IjI2NyIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjY1NSIgeTE9IjI2NyIgeDI9IjYzOCIgeTI9IjI0MSIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjI4MSIgeTE9IjM0OCIgeDI9IjI4MiIgeTI9IjMyMSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjU0MSIgeTE9IjMxMSIgeDI9IjU3MSIgeTI9IjMyNyIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjMzNCIgeTE9IjQzMSIgeDI9IjM1OSIgeTI9IjQzNCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjIyNiIgeTE9IjI0MCIgeDI9IjI1MyIgeTI9IjI0NiIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjI2MyIgeTE9IjIyMSIgeDI9IjI0NiIgeTI9IjIwNCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjY1NSIgeTE9IjI2NyIgeDI9IjY0MiIgeTI9IjI5OCIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjUxOSIgeTE9IjI3OSIgeDI9IjU0NyIgeTI9IjI2MyIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjMyNSIgeTE9IjE1NCIgeDI9IjM1MyIgeTI9IjE2MyIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjM1OSIgeTE9IjQzNCIgeDI9IjM0NCIgeTI9IjQ1NiIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjQ1MCIgeTE9IjMyMSIgeDI9IjQyNiIgeTI9IjMwNiIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjM2NiIgeTE9IjM0NCIgeDI9IjM2MiIgeTI9IjM2OSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjIxNCIgeTE9IjE4MiIgeDI9IjIxMyIgeTI9IjIxMCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjQxMiIgeTE9IjE5MCIgeDI9IjQxNiIgeTI9IjIxNyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjM4OSIgeTE9IjM2OCIgeDI9IjM2NiIgeTI9IjM0NCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjI4MiIgeTE9IjMyMSIgeDI9IjMwOSIgeTI9IjMyNCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjM5NCIgeTE9IjQwNCIgeDI9IjQxNyIgeTI9IjQxOCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjI2NyIgeTE9IjI5OCIgeDI9IjI0MSIgeTI9IjI4OSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjQ3NSIgeTE9IjI3OCIgeDI9IjQ1NCIgeTI9IjI5NyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjM5MCIgeTE9IjE3NCIgeDI9IjM1MyIgeTI9IjE2MyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjYxOCIgeTE9IjMwOCIgeDI9IjU5MyIgeTI9IjMxNCIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjIxNSIgeTE9IjMyNSIgeDI9IjE5MCIgeTI9IjMxMSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjM5MyIgeTE9IjQzMCIgeDI9IjM5NCIgeTI9IjQwNCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjIyNiIgeTE9IjI0MCIgeDI9IjIxMyIgeTI9IjIxMCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjUxOSIgeTE9IjI3OSIgeDI9IjUxMyIgeTI9IjI0OSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjU2NyIgeTE9IjI5MiIgeDI9IjU0NyIgeTI9IjI2MyIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjE1NCIgeTE9IjMxMSIgeDI9IjE1NCIgeTI9IjI3OSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjU0MiIgeTE9IjM1NyIgeDI9IjUxNyIgeTI9IjM4MiIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjUxMiIgeTE9IjIxMiIgeDI9IjQ4OCIgeTI9IjIwOCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjQyMiIgeTE9IjM5MCIgeDI9IjQ1MiIgeTI9IjM4MiIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjMyMyIgeTE9IjI2MiIgeDI9IjM1OCIgeTI9IjI3MSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjIxMSIgeTE9IjI4NSIgeDI9IjIyOSIgeTI9IjI2OCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjQzNiIgeTE9IjI2MCIgeDI9IjQwOSIgeTI9IjI1MyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjI4NyIgeTE9IjIzNSIgeDI9IjI4NyIgeTI9IjIwOCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjQxNCIgeTE9IjM2MCIgeDI9IjQ0NiIgeTI9IjM1NSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjU2MCIgeTE9IjI0MiIgeDI9IjU0NyIgeTI9IjI2MyIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjYwOCIgeTE9IjIzNyIgeDI9IjYxNCIgeTI9IjIwNSIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjQzNiIgeTE9IjE5MCIgeDI9IjQxMiIgeTI9IjE5MCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjMzNiIgeTE9IjE4MSIgeDI9IjM0MyIgeTI9IjIwOSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjQ0NSIgeTE9IjQxOSIgeDI9IjQ3MiIgeTI9IjQxNSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjU2NyIgeTE9IjE5MyIgeDI9IjU3MCIgeTI9IjIxNiIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjI2MiIgeTE9IjI3MCIgeDI9IjI1MyIgeTI9IjI0NiIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjM0MiIgeTE9IjM1MCIgeDI9IjM2MiIgeTI9IjM2OSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjQ2OSIgeTE9IjQ0MCIgeDI9IjQzNiIgeTI9IjQ2MSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjUxMSIgeTE9IjE2NiIgeDI9IjU0MSIgeTI9IjE4MSIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjUxNSIgeTE9IjMxMiIgeDI9IjQ5NSIgeTI9IjI5NyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjMxOSIgeTE9IjE5OSIgeDI9IjM0MyIgeTI9IjIwOSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjM5MCIgeTE9IjE3NCIgeDI9IjQyMCIgeTI9IjE2MyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjM3NCIgeTE9IjE5NiIgeDI9IjM0MyIgeTI9IjIwOSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjE4OCIgeTE9IjIwOCIgeDI9IjIxMyIgeTI9IjIxMCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjM0MiIgeTE9IjM1MCIgeDI9IjM0NCIgeTI9IjMyMyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjM5MyIgeTE9IjQzMCIgeDI9IjQxNyIgeTI9IjQxOCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjQ4OSIgeTE9IjE4MyIgeDI9IjQ4OCIgeTI9IjIwOCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjQxNCIgeTE9IjQ0NiIgeDI9IjM5MyIgeTI9IjQzMCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjIxMSIgeTE9IjI4NSIgeDI9IjI0MSIgeTI9IjI4OSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjQyNiIgeTE9IjMwNiIgeDI9IjQ1NCIgeTI9IjI5NyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjY0MiIgeTE9IjI5OCIgeDI9IjY0MSIgeTI9IjMyOSIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjQzNiIgeTE9IjI2MCIgeDI9IjQ0MCIgeTI9IjIyMyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjYwNCIgeTE9IjM1OSIgeDI9IjU3NSIgeTI9IjM2OSIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjQ3NSIgeTE9IjI3OCIgeDI9IjQ5NSIgeTI9IjI5NyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjQ1OCIgeTE9IjIwMiIgeDI9IjQ3NSIgeTI9IjIzNSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjM4OCIgeTE9IjI2OCIgeDI9IjM3MiIgeTI9IjI1MCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjI0NiIgeTE9IjIwNCIgeDI9IjI2NCIgeTI9IjE4NiIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjU0MiIgeTE9IjM1NyIgeDI9IjUxNyIgeTI9IjM1MSIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjI1MCIgeTE9IjE2MiIgeDI9IjI3MyIgeTI9IjE1NSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjI4OSIgeTE9IjQwOSIgeDI9IjI3MCIgeTI9IjM3OCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjU5OCIgeTE9IjE4MCIgeDI9IjU2NSIgeTI9IjE2OCIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjQ3NSIgeTE9IjIzNSIgeDI9IjQ4OCIgeTI9IjIwOCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjI5NSIgeTE9IjI5OCIgeDI9IjI2NyIgeTI9IjI5OCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjM3NyIgeTE9IjQ1NyIgeDI9IjM1OSIgeTI9IjQzNCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjQzNiIgeTE9IjE5MCIgeDI9IjQ0MCIgeTI9IjIyMyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjU5OCIgeTE9IjE4MCIgeDI9IjYxNCIgeTI9IjIwNSIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjMxOSIgeTE9IjE5OSIgeDI9IjMzNiIgeTI9IjE4MSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjQ4OSIgeTE9IjE4MyIgeDI9IjQ2OSIgeTI9IjE2MyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjI4OSIgeTE9IjE3NyIgeDI9IjMyNSIgeTI9IjE1NCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjU0MiIgeTE9IjM1NyIgeDI9IjU0OCIgeTI9IjM4MiIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjU2MCIgeTE9IjI0MiIgeDI9IjUzOSIgeTI9IjIxNSIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjM2NCIgeTE9IjQxMCIgeDI9IjMzNCIgeTI9IjQzMSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjMyMyIgeTE9IjI2MiIgeDI9IjI5NiIgeTI9IjI2NyIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjQyMiIgeTE9IjM5MCIgeDI9IjM5NCIgeTI9IjQwNCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjYwOCIgeTE9IjIzNyIgeDI9IjYzOCIgeTI9IjI0MSIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjYxNCIgeTE9IjIwNSIgeDI9IjYzOCIgeTI9IjI0MSIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjI0NiIgeTE9IjMxOCIgeDI9IjI0MSIgeTI9IjI4OSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjU2NyIgeTE9IjI5MiIgeDI9IjU5MCIgeTI9IjI3MiIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjQ3NSIgeTE9IjIzNSIgeDI9IjQ0MCIgeTI9IjIyMyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjMxOSIgeTE9IjE5OSIgeDI9IjMxOSIgeTI9IjIyOCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjQ5MiIgeTE9IjMyNCIgeDI9IjQ5NSIgeTI9IjI5NyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjI5NSIgeTE9IjI5OCIgeDI9IjMwOSIgeTI9IjMyNCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjM3NyIgeTE9IjQ1NyIgeDI9IjQwNiIgeTI9IjQ2OSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjM4OSIgeTE9IjM2OCIgeDI9IjQxNCIgeTI9IjM2MCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjI2MyIgeTE9IjIyMSIgeDI9IjI1MyIgeTI9IjI0NiIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjQxNCIgeTE9IjQ0NiIgeDI9IjQzNiIgeTI9IjQ2MSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjM2NiIgeTE9IjM0NCIgeDI9IjM0NCIgeTI9IjMyMyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjUzMyIgeTE9IjQwMSIgeDI9IjU0OCIgeTI9IjM4MiIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjIxNCIgeTE9IjE4MiIgeDI9IjI1MCIgeTI9IjE2MiIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjMyMyIgeTE9IjM5MyIgeDI9IjI5NSIgeTI9IjM4MyIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjI4OSIgeTE9IjQwOSIgeDI9IjI5NSIgeTI9IjM4MyIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjQyMiIgeTE9IjM5MCIgeDI9IjQxNyIgeTI9IjQxOCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjQxMSIgeTE9IjMzMyIgeDI9IjQyNiIgeTI9IjMwNiIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjUxMSIgeTE9IjE2NiIgeDI9IjUzNSIgeTI9IjE1NyIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjM3NyIgeTE9IjQ1NyIgeDI9IjM5MyIgeTI9IjQzMCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjQ0NCIgeTE9IjE2NiIgeDI9IjQ2OSIgeTI9IjE2MyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjE3OSIgeTE9IjMzNSIgeDI9IjE5NiIgeTI9IjM1MiIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjQxNCIgeTE9IjQ0NiIgeDI9IjQwNiIgeTI9IjQ2OSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjUxOSIgeTE9IjI3OSIgeDI9IjQ5NSIgeTI9IjI5NyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjY1NSIgeTE9IjI2NyIgeDI9IjYyOCIgeTI9IjI2MyIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PGxpbmUgeDE9IjM1OCIgeTE9IjI3MSIgeDI9IjM4OCIgeTI9IjI2OCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjI1MSIgeTE9IjM5NSIgeDI9IjI3MCIgeTI9IjM3OCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjE4OCIgeTE9IjIwOCIgeDI9IjE5NiIgeTI9IjI0MiIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjQ4NSIgeTE9IjM2MyIgeDI9IjUxNyIgeTI9IjM1MSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjIxNCIgeTE9IjE4MiIgeDI9IjE4OCIgeTI9IjIwOCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjI0NiIgeTE9IjMxOCIgeDI9IjIxNSIgeTI9IjMyNSIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjI4NyIgeTE9IjIzNSIgeDI9IjMxOSIgeTI9IjIyOCIgc3Ryb2tlPSIjMjJkM2VlIi8+PGxpbmUgeDE9IjQ3OCIgeTE9IjM5MSIgeDI9IjQ4NSIgeTI9IjM2MyIgc3Ryb2tlPSIjM2I4MmY2Ii8+PGxpbmUgeDE9IjU5MCIgeTE9IjI3MiIgeDI9IjU4NCIgeTI9IjI0MCIgc3Ryb2tlPSIjOGI1Y2Y2Ii8+PC9nPjxnPjxjaXJjbGUgY3g9IjM3MSIgY3k9IjMwMyIgcj0iMy4yIiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iNjU1IiBjeT0iMjY3IiByPSIyLjAiIGZpbGw9IiM4YjVjZjYiLz48Y2lyY2xlIGN4PSIyMTEiIGN5PSIyODUiIHI9IjIuMCIgZmlsbD0iIzIyZDNlZSIvPjxjaXJjbGUgY3g9IjQ3OCIgY3k9IjM5MSIgcj0iMy4yIiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iNDkyIiBjeT0iMzI0IiByPSIyLjQiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSIyMTQiIGN5PSIxODIiIHI9IjEuNiIgZmlsbD0iIzIyZDNlZSIvPjxjaXJjbGUgY3g9IjM2NCIgY3k9IjQxMCIgcj0iMi4wIiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iNDExIiBjeT0iMzMzIiByPSIxLjYiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSIzNzQiIGN5PSIxOTYiIHI9IjIuNCIgZmlsbD0iIzNiODJmNiIvPjxjaXJjbGUgY3g9IjYwNCIgY3k9IjM1OSIgcj0iMi40IiBmaWxsPSIjOGI1Y2Y2Ii8+PGNpcmNsZSBjeD0iMjg5IiBjeT0iMTc3IiByPSIyLjQiIGZpbGw9IiMyMmQzZWUiLz48Y2lyY2xlIGN4PSI1NjAiIGN5PSIyNDIiIHI9IjIuMCIgZmlsbD0iIzhiNWNmNiIvPjxjaXJjbGUgY3g9IjYwOCIgY3k9IjIzNyIgcj0iMi4wIiBmaWxsPSIjOGI1Y2Y2Ii8+PGNpcmNsZSBjeD0iNTY3IiBjeT0iMTkzIiByPSIyLjAiIGZpbGw9IiM4YjVjZjYiLz48Y2lyY2xlIGN4PSI0MzYiIGN5PSIyNjAiIHI9IjEuNiIgZmlsbD0iIzNiODJmNiIvPjxjaXJjbGUgY3g9IjIxNCIgY3k9IjM2OCIgcj0iMi40IiBmaWxsPSIjMjJkM2VlIi8+PGNpcmNsZSBjeD0iMTc5IiBjeT0iMzM1IiByPSIzLjIiIGZpbGw9IiMyMmQzZWUiLz48Y2lyY2xlIGN4PSIxNzAiIGN5PSIyNTAiIHI9IjMuMiIgZmlsbD0iIzIyZDNlZSIvPjxjaXJjbGUgY3g9IjIyNiIgY3k9IjI0MCIgcj0iMi40IiBmaWxsPSIjMjJkM2VlIi8+PGNpcmNsZSBjeD0iNjEzIiBjeT0iMzM0IiByPSIxLjYiIGZpbGw9IiM4YjVjZjYiLz48Y2lyY2xlIGN4PSIxNTQiIGN5PSIzMTEiIHI9IjIuMCIgZmlsbD0iIzIyZDNlZSIvPjxjaXJjbGUgY3g9IjI0NiIgY3k9IjMxOCIgcj0iMi4wIiBmaWxsPSIjMjJkM2VlIi8+PGNpcmNsZSBjeD0iMzIzIiBjeT0iMjYyIiByPSIyLjAiIGZpbGw9IiMyMmQzZWUiLz48Y2lyY2xlIGN4PSI0NDUiIGN5PSI0MTkiIHI9IjEuNiIgZmlsbD0iIzNiODJmNiIvPjxjaXJjbGUgY3g9IjI1MCIgY3k9IjE2MiIgcj0iMS42IiBmaWxsPSIjMjJkM2VlIi8+PGNpcmNsZSBjeD0iMjQzIiBjeT0iMzU4IiByPSIzLjIiIGZpbGw9IiMyMmQzZWUiLz48Y2lyY2xlIGN4PSI0NTgiIGN5PSIyMDIiIHI9IjIuMCIgZmlsbD0iIzNiODJmNiIvPjxjaXJjbGUgY3g9IjUxNSIgY3k9IjMxMiIgcj0iMi4wIiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iMzg5IiBjeT0iMzY4IiByPSIyLjAiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSI1NDIiIGN5PSIzNTciIHI9IjIuMCIgZmlsbD0iIzhiNWNmNiIvPjxjaXJjbGUgY3g9IjMxMSIgY3k9IjM1MCIgcj0iMi4wIiBmaWxsPSIjMjJkM2VlIi8+PGNpcmNsZSBjeD0iMzUwIiBjeT0iMzkwIiByPSIxLjYiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSI2MTgiIGN5PSIzMDgiIHI9IjMuMiIgZmlsbD0iIzhiNWNmNiIvPjxjaXJjbGUgY3g9IjQ3NSIgY3k9IjIzNSIgcj0iMi4wIiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iNDUwIiBjeT0iMzIxIiByPSIyLjQiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSI1NDEiIGN5PSIzMTEiIHI9IjMuMiIgZmlsbD0iIzhiNWNmNiIvPjxjaXJjbGUgY3g9IjUxOSIgY3k9IjI3OSIgcj0iMi40IiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iNDY5IiBjeT0iNDQwIiByPSIyLjAiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSIyODEiIGN5PSIzNDgiIHI9IjIuMCIgZmlsbD0iIzIyZDNlZSIvPjxjaXJjbGUgY3g9IjE4MiIgY3k9IjI3OSIgcj0iMS42IiBmaWxsPSIjMjJkM2VlIi8+PGNpcmNsZSBjeD0iNDc1IiBjeT0iMjc4IiByPSIzLjIiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSIyODkiIGN5PSI0MDkiIHI9IjIuNCIgZmlsbD0iIzIyZDNlZSIvPjxjaXJjbGUgY3g9IjU5OCIgY3k9IjE4MCIgcj0iMS42IiBmaWxsPSIjOGI1Y2Y2Ii8+PGNpcmNsZSBjeD0iNTExIiBjeT0iMTY2IiByPSIyLjAiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSIyNjMiIGN5PSIyMjEiIHI9IjEuNiIgZmlsbD0iIzIyZDNlZSIvPjxjaXJjbGUgY3g9IjMyNiIgY3k9IjMwNiIgcj0iMy4yIiBmaWxsPSIjMjJkM2VlIi8+PGNpcmNsZSBjeD0iNTMzIiBjeT0iNDAxIiByPSIxLjYiIGZpbGw9IiM4YjVjZjYiLz48Y2lyY2xlIGN4PSI0ODUiIGN5PSIzNjMiIHI9IjEuNiIgZmlsbD0iIzNiODJmNiIvPjxjaXJjbGUgY3g9IjQyMiIgY3k9IjM5MCIgcj0iMi4wIiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iMjg3IiBjeT0iMjM1IiByPSIxLjYiIGZpbGw9IiMyMmQzZWUiLz48Y2lyY2xlIGN4PSI0NDQiIGN5PSIxNjYiIHI9IjMuMiIgZmlsbD0iIzNiODJmNiIvPjxjaXJjbGUgY3g9IjQyMiIgY3k9IjI4MSIgcj0iMi4wIiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iMjYyIiBjeT0iMjcwIiByPSIyLjAiIGZpbGw9IiMyMmQzZWUiLz48Y2lyY2xlIGN4PSIyMTUiIGN5PSIzMjUiIHI9IjEuNiIgZmlsbD0iIzIyZDNlZSIvPjxjaXJjbGUgY3g9IjUxMiIgY3k9IjIxMiIgcj0iMi4wIiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iMzQyIiBjeT0iMzUwIiByPSIyLjAiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSIyOTYiIGN5PSIyNjciIHI9IjIuNCIgZmlsbD0iIzIyZDNlZSIvPjxjaXJjbGUgY3g9IjQwOSIgY3k9IjI1MyIgcj0iMy4yIiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iNTE3IiBjeT0iMzgyIiByPSIxLjYiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSIzMTkiIGN5PSIxOTkiIHI9IjEuNiIgZmlsbD0iIzIyZDNlZSIvPjxjaXJjbGUgY3g9IjMzNCIgY3k9IjQzMSIgcj0iMS42IiBmaWxsPSIjMjJkM2VlIi8+PGNpcmNsZSBjeD0iMzU4IiBjeT0iMjcxIiByPSIxLjYiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSI0MTQiIGN5PSI0NDYiIHI9IjEuNiIgZmlsbD0iIzNiODJmNiIvPjxjaXJjbGUgY3g9IjM2NiIgY3k9IjM0NCIgcj0iMy4yIiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iNTY3IiBjeT0iMjkyIiByPSIyLjQiIGZpbGw9IiM4YjVjZjYiLz48Y2lyY2xlIGN4PSI1NDEiIGN5PSIxODEiIHI9IjIuNCIgZmlsbD0iIzhiNWNmNiIvPjxjaXJjbGUgY3g9IjU3MSIgY3k9IjMyNyIgcj0iMi4wIiBmaWxsPSIjOGI1Y2Y2Ii8+PGNpcmNsZSBjeD0iMjk1IiBjeT0iMjk4IiByPSIxLjYiIGZpbGw9IiMyMmQzZWUiLz48Y2lyY2xlIGN4PSIzNTciIGN5PSIyMzAiIHI9IjIuMCIgZmlsbD0iIzNiODJmNiIvPjxjaXJjbGUgY3g9IjMxOSIgY3k9IjIyOCIgcj0iMi40IiBmaWxsPSIjMjJkM2VlIi8+PGNpcmNsZSBjeD0iNDI2IiBjeT0iMzA2IiByPSIyLjQiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSI0ODkiIGN5PSIxODMiIHI9IjEuNiIgZmlsbD0iIzNiODJmNiIvPjxjaXJjbGUgY3g9IjQxNCIgY3k9IjM2MCIgcj0iMy4yIiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iMzI1IiBjeT0iMTU0IiByPSIxLjYiIGZpbGw9IiMyMmQzZWUiLz48Y2lyY2xlIGN4PSI1OTAiIGN5PSIyNzIiIHI9IjEuNiIgZmlsbD0iIzhiNWNmNiIvPjxjaXJjbGUgY3g9IjM5MCIgY3k9IjE3NCIgcj0iMS42IiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iMzIzIiBjeT0iMzkzIiByPSIyLjQiIGZpbGw9IiMyMmQzZWUiLz48Y2lyY2xlIGN4PSIzODgiIGN5PSIyNjgiIHI9IjEuNiIgZmlsbD0iIzNiODJmNiIvPjxjaXJjbGUgY3g9IjYxNCIgY3k9IjIwNSIgcj0iMy4yIiBmaWxsPSIjOGI1Y2Y2Ii8+PGNpcmNsZSBjeD0iMjg3IiBjeT0iMjA4IiByPSIyLjAiIGZpbGw9IiMyMmQzZWUiLz48Y2lyY2xlIGN4PSIzNzciIGN5PSI0NTciIHI9IjIuMCIgZmlsbD0iIzNiODJmNiIvPjxjaXJjbGUgY3g9IjUzOSIgY3k9IjIxNSIgcj0iMy4yIiBmaWxsPSIjOGI1Y2Y2Ii8+PGNpcmNsZSBjeD0iNjQyIiBjeT0iMjk4IiByPSIyLjAiIGZpbGw9IiM4YjVjZjYiLz48Y2lyY2xlIGN4PSI0NDYiIGN5PSIzNTUiIHI9IjIuNCIgZmlsbD0iIzNiODJmNiIvPjxjaXJjbGUgY3g9IjQzNiIgY3k9IjE5MCIgcj0iMS42IiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iNDEyIiBjeT0iMTkwIiByPSIyLjAiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSIzNTkiIGN5PSI0MzQiIHI9IjEuNiIgZmlsbD0iIzNiODJmNiIvPjxjaXJjbGUgY3g9IjI0NiIgY3k9IjIwNCIgcj0iMS42IiBmaWxsPSIjMjJkM2VlIi8+PGNpcmNsZSBjeD0iMjUxIiBjeT0iMzk1IiByPSIyLjAiIGZpbGw9IiMyMmQzZWUiLz48Y2lyY2xlIGN4PSIyNjciIGN5PSIyOTgiIHI9IjMuMiIgZmlsbD0iIzIyZDNlZSIvPjxjaXJjbGUgY3g9IjE4OCIgY3k9IjIwOCIgcj0iMi4wIiBmaWxsPSIjMjJkM2VlIi8+PGNpcmNsZSBjeD0iMTk2IiBjeT0iMzUyIiByPSIzLjIiIGZpbGw9IiMyMmQzZWUiLz48Y2lyY2xlIGN4PSIyMjkiIGN5PSIyNjgiIHI9IjIuMCIgZmlsbD0iIzIyZDNlZSIvPjxjaXJjbGUgY3g9IjI5NSIgY3k9IjM4MyIgcj0iMy4yIiBmaWxsPSIjMjJkM2VlIi8+PGNpcmNsZSBjeD0iMzM2IiBjeT0iMTgxIiByPSIzLjIiIGZpbGw9IiMyMmQzZWUiLz48Y2lyY2xlIGN4PSIxOTAiIGN5PSIzMTEiIHI9IjIuMCIgZmlsbD0iIzIyZDNlZSIvPjxjaXJjbGUgY3g9IjUxNyIgY3k9IjM1MSIgcj0iMy4yIiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iNTEzIiBjeT0iMjQ5IiByPSIyLjAiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSI1ODQiIGN5PSIyNDAiIHI9IjMuMiIgZmlsbD0iIzhiNWNmNiIvPjxjaXJjbGUgY3g9IjUzNSIgY3k9IjE1NyIgcj0iMS42IiBmaWxsPSIjOGI1Y2Y2Ii8+PGNpcmNsZSBjeD0iNTc1IiBjeT0iMzY5IiByPSIxLjYiIGZpbGw9IiM4YjVjZjYiLz48Y2lyY2xlIGN4PSI0NTQiIGN5PSIyOTciIHI9IjMuMiIgZmlsbD0iIzNiODJmNiIvPjxjaXJjbGUgY3g9IjM4MiIgY3k9IjIyNyIgcj0iMi40IiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iMzQ0IiBjeT0iMzIzIiByPSIyLjQiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSI0MzYiIGN5PSI0NjEiIHI9IjEuNiIgZmlsbD0iIzNiODJmNiIvPjxjaXJjbGUgY3g9IjQ0MCIgY3k9IjIyMyIgcj0iMy4yIiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iNDE2IiBjeT0iMjE3IiByPSIyLjAiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSI1NzAiIGN5PSIyMTYiIHI9IjIuMCIgZmlsbD0iIzhiNWNmNiIvPjxjaXJjbGUgY3g9IjM4NCIgY3k9IjMyNyIgcj0iMi40IiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iMjczIiBjeT0iMTU1IiByPSIxLjYiIGZpbGw9IiMyMmQzZWUiLz48Y2lyY2xlIGN4PSIxNTQiIGN5PSIyNzkiIHI9IjIuMCIgZmlsbD0iIzIyZDNlZSIvPjxjaXJjbGUgY3g9IjYyOCIgY3k9IjI2MyIgcj0iMS42IiBmaWxsPSIjOGI1Y2Y2Ii8+PGNpcmNsZSBjeD0iNDc0IiBjeT0iMzQxIiByPSIyLjAiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSI1NDciIGN5PSIyNjMiIHI9IjIuMCIgZmlsbD0iIzhiNWNmNiIvPjxjaXJjbGUgY3g9IjQ2OSIgY3k9IjE2MyIgcj0iMy4yIiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iNTA2IiBjeT0iNDExIiByPSIxLjYiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSIyMTMiIGN5PSIyMTAiIHI9IjMuMiIgZmlsbD0iIzIyZDNlZSIvPjxjaXJjbGUgY3g9IjU0OCIgY3k9IjM4MiIgcj0iMi4wIiBmaWxsPSIjOGI1Y2Y2Ii8+PGNpcmNsZSBjeD0iMzkzIiBjeT0iNDMwIiByPSIyLjAiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSI2MzgiIGN5PSIyNDEiIHI9IjMuMiIgZmlsbD0iIzhiNWNmNiIvPjxjaXJjbGUgY3g9IjI4MiIgY3k9IjMyMSIgcj0iMi4wIiBmaWxsPSIjMjJkM2VlIi8+PGNpcmNsZSBjeD0iNDg4IiBjeT0iMjA4IiByPSIzLjIiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSIxOTYiIGN5PSIyNDIiIHI9IjEuNiIgZmlsbD0iIzIyZDNlZSIvPjxjaXJjbGUgY3g9IjI1MyIgY3k9IjI0NiIgcj0iMS42IiBmaWxsPSIjMjJkM2VlIi8+PGNpcmNsZSBjeD0iNTY1IiBjeT0iMTY4IiByPSIyLjAiIGZpbGw9IiM4YjVjZjYiLz48Y2lyY2xlIGN4PSIyNzAiIGN5PSIzNzgiIHI9IjIuNCIgZmlsbD0iIzIyZDNlZSIvPjxjaXJjbGUgY3g9IjM0NCIgY3k9IjQ1NiIgcj0iMi4wIiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iNTkzIiBjeT0iMzE0IiByPSIyLjAiIGZpbGw9IiM4YjVjZjYiLz48Y2lyY2xlIGN4PSIxNjUiIGN5PSIyMTciIHI9IjMuMiIgZmlsbD0iIzIyZDNlZSIvPjxjaXJjbGUgY3g9IjM0MyIgY3k9IjIwOSIgcj0iMi40IiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iNjQxIiBjeT0iMzI5IiByPSIyLjAiIGZpbGw9IiM4YjVjZjYiLz48Y2lyY2xlIGN4PSIyNDEiIGN5PSIyODkiIHI9IjIuNCIgZmlsbD0iIzIyZDNlZSIvPjxjaXJjbGUgY3g9IjM1MyIgY3k9IjE2MyIgcj0iMy4yIiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iNDk1IiBjeT0iMjk3IiByPSIxLjYiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSI0MjAiIGN5PSIxNjMiIHI9IjMuMiIgZmlsbD0iIzNiODJmNiIvPjxjaXJjbGUgY3g9IjQ1MiIgY3k9IjM4MiIgcj0iMi40IiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iMzcyIiBjeT0iMjUwIiByPSIxLjYiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSIzMDkiIGN5PSIzMjQiIHI9IjEuNiIgZmlsbD0iIzIyZDNlZSIvPjxjaXJjbGUgY3g9IjI2NCIgY3k9IjE4NiIgcj0iMi40IiBmaWxsPSIjMjJkM2VlIi8+PGNpcmNsZSBjeD0iMzk0IiBjeT0iNDA0IiByPSIyLjQiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSIzNjIiIGN5PSIzNjkiIHI9IjMuMiIgZmlsbD0iIzNiODJmNiIvPjxjaXJjbGUgY3g9IjQxNyIgY3k9IjQxOCIgcj0iMy4yIiBmaWxsPSIjM2I4MmY2Ii8+PGNpcmNsZSBjeD0iNDcyIiBjeT0iNDE1IiByPSIyLjAiIGZpbGw9IiMzYjgyZjYiLz48Y2lyY2xlIGN4PSI0MDYiIGN5PSI0NjkiIHI9IjIuMCIgZmlsbD0iIzNiODJmNiIvPjwvZz48L3N2Zz4=") 50% 58%/min(1000px, 135vw) auto no-repeat;
+            opacity: .6;
+            -webkit-mask-image: linear-gradient(#000 65%, transparent);
+            mask-image: linear-gradient(#000 65%, transparent);
+            animation: bgf 22s ease-in-out infinite alternate;
+            pointer-events: none
+        }
+        
+        @keyframes bgf {
+            from {
+                transform: scale(1) translateY(0)
+            }
+            to {
+                transform: scale(1.06) translateY(-10px)
+            }
+        }
+        
+        .hwrap {
+            text-shadow: 0 2px 24px rgba(5, 7, 15, .85)
+        }
+        
+        #net {
+            opacity: .3
+        }
+        
+        @media(max-width:860px) {
+            .hero::before {
+                background-size: 170vw auto;
+                opacity: .45
+            }
+        }
+        
+        .rf {
+            cursor: pointer;
+            background: none;
+            font-size: 14px;
+            line-height: 1
+        }
+        
+        .rf:hover {
+            color: var(--c);
+            border-color: var(--c)
+        }
+    </style>
+</head>
+
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header id="hd">
+        <div class="wrap">
+            <nav aria-label="Primary">
+                <a class="logo" href="#top" aria-label="Deepjyoti Debnath, home">DEEPJYOTI.D</a>
+                <ul class="links" id="lk">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="ni" data-soc="nav"></div>
+                <button class="burger" id="bg" aria-label="Toggle menu" aria-expanded="false" aria-controls="lk">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero" id="top">
+            <canvas id="net" aria-hidden="true"></canvas>
+            <div class="hwrap">
+                <span class="avail" data-in style="animation-delay:.1s"><i class="dot"></i>Available for internships &amp; opportunities</span>
+                <h1 data-in style="animation-delay:.25s">Hi, I’m <span class="grad">Deepjyoti</span><br>Debnath</h1>
+                <p class="role" data-in style="animation-delay:.4s"><span class="sr">AI/ML Engineer | Generative AI | LLMs | MLOps</span><span id="typed" aria-hidden="true">AI/ML Engineer | Generative AI | LLMs | MLOps</span><span class="caret" aria-hidden="true"></span></p>
+                <p class="tag" data-in style="animation-delay:.55s">I build production-ready AI applications, autonomous agents, RAG systems and intelligent machine learning solutions.</p>
+                <div class="cta" data-in style="animation-delay:.7s">
+                    <a class="btn pr" href="#projects">View Projects →</a>
+                    <button class="btn" id="resume" type="button">Download Resume ↓</button>
+                </div>
+                <div class="soc" data-soc="hero" data-in style="animation-delay:.85s"></div>
+            </div>
+            <a class="sh" href="#about">Scroll to explore<span class="ms"><i></i></span></a>
+        </section>
+
+        <div class="wrap">
+            <div class="stats" id="stats">
+                <div class="stat"><b data-n="6" data-s="+">0</b><span>Flagship Projects</span></div>
+                <div class="stat"><b data-n="92" data-s="%">0</b><span>RAG Answer Relevance</span></div>
+                <div class="stat"><b id="st-lc" data-n="600" data-s="+">0</b><span>LeetCode Solved</span></div>
+                <div class="stat"><b id="st-gh" data-n="58" data-s="">0</b><span>GitHub Repos</span></div>
+                <div class="stat"><b data-n="100" data-s="+">0</b><span>Students Reached</span></div>
+            </div>
+        </div>
+
+        <section id="about">
+            <div class="wrap about">
+                <div class="rv">
+                    <p class="eyebrow">01 — About</p>
+                    <h2>Building <span class="grad">intelligent systems</span> that ship.</h2>
+                    <p>AI/ML Engineer specializing in LLM systems, retrieval-augmented generation and production MLOps. I have architected and deployed RAG pipelines, fine-tuned LLMs with LangChain and Hugging Face Transformers, and built CNN-based computer
+                        vision models.</p>
+                    <p>My foundation spans scalable, self-hosted system design, prompt engineering and end-to-end ML deployment. Selected for Amazon ML Summer School 2026.</p>
+                </div>
+                <aside class="glass rv" aria-label="Quick facts">
+                    <h3>// focus areas</h3>
+                    <ul>
+                        <li>LLMs &amp; Generative AI</li>
+                        <li>RAG &amp; Agentic AI</li>
+                        <li>MLOps &amp; Model Serving</li>
+                        <li>Computer Vision</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="wrap">
+                <p class="eyebrow rv">02 — Technical Skills</p>
+                <h2 class="rv">The toolkit.</h2>
+                <div class="sk" id="sk"></div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="wrap">
+                <p class="eyebrow rv">03 — Featured Projects</p>
+                <h2 class="rv">Selected <span class="grad">work</span>.</h2>
+                <div class="pj" id="pj"></div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="wrap">
+                <p class="eyebrow rv">04 — Experience &amp; Leadership</p>
+                <h2 class="rv">Where I’ve built.</h2>
+                <div class="tl" id="tl"></div>
+            </div>
+        </section>
+
+        <section id="achievements" style="padding-top:0">
+            <div class="wrap">
+                <div class="aws rv">
+                    <div class="tr" aria-hidden="true">🏆</div>
+                    <div>
+                        <p class="eyebrow">05 — Achievement</p>
+                        <h3>Amazon ML Summer School 2026</h3>
+                        <p>Selected for the programme after passing SOP screening.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="wrap">
+                <p class="eyebrow rv">06 — Education &amp; Certifications</p>
+                <h2 class="rv">Foundations.</h2>
+                <div class="ed">
+                    <div class="card rv">
+                        <h3>B.Tech — Computer Science &amp; Engineering</h3>
+                        <p class="sub">Cooch Behar Govt. Engineering College, West Bengal</p>
+                        <p class="gp">Aggregate 8.08 · Jun 2023 – Jun 2027</p>
+                    </div>
+                    <div class="card rv">
+                        <h3>Higher Secondary (Science)</h3>
+                        <p class="sub">Kashibati Vivekananda Vidyapith</p>
+                        <p class="gp">Aggregate 97.2% · May 2022</p>
+                    </div>
+                    <div class="card rv">
+                        <h3>Certifications</h3>
+                        <ul>
+                            <li>Complete Python with DSA Bootcamp (Udemy)</li>
+                            <li>Generative AI with LangChain &amp; Hugging Face (Udemy)</li>
+                            <li>Complete Data Science, ML, DL, NLP Bootcamp (Udemy)</li>
+                            <li>Goldman Sachs Software Engineering Virtual Experience (Forage)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="activity" style="padding-top:0">
+            <div class="wrap">
+                <p class="eyebrow rv">07 — Live Coding Profiles</p>
+                <h2 class="rv">GitHub &amp; LeetCode, <span class="grad">live</span>.</h2>
+                <div class="act">
+                    <article class="card rv" aria-live="polite">
+                        <div class="ah">
+                            <h3>GitHub</h3><span><span class="live" id="gh-live">Loading…</span> <button class="live rf" type="button" data-rf="gh" aria-label="Refresh GitHub data">↻</button></span>
+                        </div>
+                        <div class="act-b" id="gh-body">
+                            <p class="note">Loading live data…</p>
+                        </div><a class="btn sm" href="https://github.com/deepjyotidebnath" target="_blank" rel="noopener">View GitHub profile ↗</a></article>
+                    <article class="card rv" aria-live="polite">
+                        <div class="ah">
+                            <h3>LeetCode</h3><span><span class="live" id="lc-live">Loading…</span> <button class="live rf" type="button" data-rf="lc" aria-label="Refresh LeetCode data">↻</button></span>
+                        </div>
+                        <div class="act-b" id="lc-body">
+                            <p class="note">Loading live data…</p>
+                        </div><a class="btn sm" href="https://leetcode.com/u/deep23118" target="_blank" rel="noopener">View LeetCode profile ↗</a></article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" style="padding-top:0">
+            <div class="wrap">
+                <div class="ct rv">
+                    <p class="eyebrow">08 — Contact</p>
+                    <h2>Let’s Build <span class="grad">Something Intelligent</span></h2>
+                    <p>Open to internships, collaborations and exciting AI/ML opportunities.</p>
+                    <div class="cta">
+                        <a class="btn pr" href="mailto:deepjyotidebnathcse@gmail.com">✉ deepjyotidebnathcse@gmail.com</a>
+                        <a class="btn" href="https://www.linkedin.com/in/deepjyoti-debnath-844279316/" target="_blank" rel="noopener">LinkedIn ↗</a>
+                        <a class="btn" href="https://github.com/deepjyotidebnath" target="_blank" rel="noopener">GitHub ↗</a>
+                        <a class="btn" href="tel:+918116265152">📞 Call</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap"><span>© <span id="yr">2026</span> Deepjyoti Debnath — AI/ML Engineer · West Bengal, India</span>
+            <span><a href="https://github.com/deepjyotidebnath" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/deepjyoti-debnath-844279316/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://leetcode.com/u/deep23118" target="_blank" rel="noopener">LeetCode</a> · <a href="mailto:deepjyotidebnathcse@gmail.com">Email</a></span></div>
+    </footer>
+
+    <script>
+        /* ---------- Data (all content taken from the existing site) ---------- */
+        const GH = "https://github.com/deepjyotidebnath";
+        const RESUME_URL = ""; // Optional: set to "Deepjyoti_Debnath_Resume.pdf" once you add your PDF next to index.html
+        const SKILLS = [
+            ["Languages", "</>", ["Python (Advanced)", "C++", "C", "JavaScript", "SQL", "HTML", "CSS"]],
+            ["LLM & Generative AI", "AI", ["LLMs", "RAG", "Agentic AI", "Multi-Agent Systems", "LangChain", "LangGraph", "LlamaIndex", "Hugging Face Transformers", "Fine-Tuning (LoRA, PEFT)", "Prompt Engineering", "Vector Search", "AI Evaluation", "Guardrails"]],
+            ["Machine Learning & Deep Learning", "ML", ["Machine Learning", "Deep Learning", "NLP", "Computer Vision", "PyTorch", "TensorFlow", "Scikit-learn", "XGBoost", "OpenCV", "YOLOv8", "Feature Engineering", "Model Optimization"]],
+            ["MLOps & Cloud", "Ops", ["MLflow", "Docker", "CI/CD", "GitHub Actions", "AWS SageMaker", "AWS S3", "Model Serving", "Git", "Linux", "Nginx", "Postman", "Vercel"]],
+            ["Backend & Web", "API", ["FastAPI", "Flask", "Django", "Node.js", "Express.js", "React.js", "Next.js", "Tailwind CSS", "REST APIs", "JWT Authentication"]],
+            ["Databases & Vector Stores", "DB", ["PostgreSQL", "MySQL", "MongoDB", "ChromaDB", "Pinecone", "FAISS"]],
+            ["Data Engineering", "ETL", ["Pandas", "NumPy", "Spark", "ETL Pipelines"]],
+            ["Core CS & Math", "∑", ["DSA", "OOP", "Operating Systems", "Computer Networks", "DBMS", "Linear Algebra", "Probability", "Statistics"]],
+            ["Professional Skills", "★", ["Problem Solving", "Research", "Communication", "Leadership", "Collaboration", "Debugging", "Code Optimization"]]
+        ];
+        const PROJECTS = [{
+            t: "Agentic AI Evaluation & Guardrails Framework",
+            d: "Evaluation and guardrails framework for autonomous LLM agents. Uses LLM-as-Judge scoring to catch unsafe or ungrounded outputs and block them before execution.",
+            r: "Safer agent outputs",
+            s: ["LangGraph", "FastAPI", "NeMo Guardrails", "LLM-as-Judge"],
+            u: "https://agenticaiintel.streamlit.app/",
+            h: 190
+        }, {
+            t: "Production MLOps Platform with Drift Detection",
+            d: "Self-hosted MLOps pipeline with automated model versioning, drift detection and CI/CD-triggered retraining for continuous model reliability.",
+            r: "Auto-retraining",
+            s: ["MLflow", "Evidently AI", "Docker", "GitHub Actions"],
+            u: "https://driftdetection.streamlit.app/",
+            h: 215
+        }, {
+            t: "RAG-based Enterprise Document QA",
+            d: "Hybrid-retrieval RAG platform combining dense and sparse search with citation grounding, containerized for scalable deployment.",
+            r: "92% Answer Relevance",
+            big: "92%",
+            s: ["LangChain", "Pinecone", "FAISS", "FastAPI", "Docker"],
+            u: "https://ragchatbotbyintellexa.streamlit.app/",
+            h: 250
+        }, {
+            t: "Fine-Tuned Text-to-SQL Model",
+            d: "Fine-tuned a code LLM for natural-language-to-SQL generation on the Spider benchmark using parameter-efficient training.",
+            r: "LoRA + PEFT",
+            s: ["PyTorch", "Transformers", "LoRA", "PEFT"],
+            u: "https://spiderexplorrerintelle.streamlit.app/",
+            h: 270
+        }, {
+            t: "Real-Time Multi-Object Tracking & Analytics",
+            d: "Real-time computer vision pipeline for multi-object tracking on live video, paired with an XGBoost-driven predictive analytics layer and dashboard.",
+            s: ["YOLOv8", "OpenCV", "XGBoost", "FastAPI", "Streamlit"],
+            u: "https://yolov8videodetection.streamlit.app/",
+            h: 165
+        }, {
+            t: "AI-Powered Medical Chatbot",
+            d: "Context-aware RAG chatbot with persistent conversation memory and personalized health recommendations.",
+            s: ["LangChain", "Transformers", "Streamlit"],
+            u: "https://ai-medical-chatbot-intellexa-by-deepjyoti.streamlit.app/",
+            h: 300
+        }];
+        const EXP = [
+            ["Aug 2026 – Present · intellexa.online", "AI & Full-Stack Developer — Intellexa", ["Building and maintaining intellexa.online, a live services platform, from backend logic to deployed frontend.", "Developed an industry-wise service catalog covering 28 target client segments, including e-commerce, finance, education, clinics, and MSMEs.", "Deploy and ship production updates to the live site while keeping it responsive across devices."]],
+            ["May 2026 · Remote", "AI & ML Trainee Intern — Maincrafts Technology", ["Contributed to designing autonomous AI agents using LangChain and NLP frameworks for multi-step workflow automation.", "Worked on parameter-efficient fine-tuning of domain-specific LLMs to improve response quality and reduce hallucination."]],
+            ["Jun 2025 – Jul 2025 · Remote", "Generative AI Trainee Intern — Codec Technologies", ["Supported end-to-end development of a RAG pipeline (LangChain, Hugging Face Transformers, FAISS) for document QA with batch ingestion and retrieval."]],
+            ["2023 – Present", "AI/ML Lead — Google Developer Student Clubs, CGEC", ["Organized 2+ hands-on workshops on Computer Vision, NLP and Generative AI, attended by 100+ students.", "Mentored 30+ juniors through end-to-end ML projects."]]
+        ];
+        const $ = (s, r = document) => r.querySelector(s),
+            el = (h) => {
+                const t = document.createElement("template");
+                t.innerHTML = h.trim();
+                return t.content.firstChild
+            };
+        const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+
+        /* ---------- Components ---------- */
+        const SkillCard = ([n, i, l]) => el(`<div class="card rv"><h3><span class="ic" aria-hidden="true">${i}</span>${esc(n)}</h3><div class="chips">${l.map(x=>`<span class="chip">${esc(x)}</span>`).join("")}</div></div>`);
+function visual(p,i){ // illustrative UI mock (not a screenshot): bar/line motif tinted per project
+  let seed=i*7+3;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+  const bars=Array.from({length:14},(_,k)=>{const h=20+rnd()*60;return `<rect x="${k*22+4}" y="${100-h}" width="14" height="${h}" rx="3" fill="hsl(${p.h},90%,62%)" opacity="${.25+rnd()*.5}"/>`}).join("");
+  const pts=Array.from({length:14},(_,k)=>`${k*22+11},${40+rnd()*35}`).join(" ");
+  return `<div class="vis" role="img" aria-label="Illustrative interface preview for ${esc(p.t)}"><div class="bar"><i></i><i></i><i></i><em>${new URL(p.u).host}</em></div><svg viewBox="0 0 310 100" preserveAspectRatio="none">${bars}<polyline points="${pts}" fill="none" stroke="hsl(${p.h+40},95%,72%)" stroke-width="2"/></svg>${p.big?`<span class="big">${p.big}</span>`:""}</div>`}
+const ProjectCard=(p,i)=>el(`<article class="proj rv" style="--h:${p.h}">${visual(p,i)}<div class="pb"><span class="num">0${i+1}</span><h3>${esc(p.t)}</h3><p>${esc(p.d)}</p>${p.r?`<span class="res">${esc(p.r)}</span>`:""}<div class="chips">${p.s.map(x=>`<span class="chip">${x}</span>`).join("")}</div>
+<details><summary>Case study</summary><dl><dt>Overview</dt><dd>${esc(p.d)}</dd><dt>Stack</dt><dd>${p.s.join(", ")}</dd>${p.r?`<dt>Outcome</dt><dd>${esc(p.r)}</dd>`:""}</dl></details>
+<div class="acts"><a class="btn pr sm" href="${p.u}" target="_blank" rel="noopener">Live Demo ↗</a><a class="btn sm" href="${GH}?tab=repositories" target="_blank" rel="noopener">GitHub ↗</a></div></div></article>`);
+const Event=([w,t,l])=>el(`<div class="ev card rv"><span class="when">${esc(w)}</span><h3>${esc(t)}</h3><ul>${l.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`);
+$("#sk").append(...SKILLS.map(SkillCard));$("#pj").append(...PROJECTS.map(ProjectCard));$("#tl").append(...EXP.map(Event));
+$("#yr").textContent=new Date().getFullYear();
+
+/* ---------- Nav ---------- */
+const hd=$("#hd"),bg=$("#bg"),lk=$("#lk");
+addEventListener("scroll",()=>hd.classList.toggle("s",scrollY>20),{passive:true});
+bg.onclick=()=>{const o=lk.classList.toggle("o");bg.setAttribute("aria-expanded",o);bg.textContent=o?"✕":"☰"};
+lk.addEventListener("click",e=>{if(e.target.closest("a")){lk.classList.remove("o");bg.textContent="☰";bg.setAttribute("aria-expanded",false)}});
+const secs=[...document.querySelectorAll("main section[id]")],navA=[...lk.querySelectorAll("a")];
+new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)navA.forEach(a=>a.classList.toggle("on",a.hash==="#"+e.target.id))}),{rootMargin:"-45% 0px -50%"}).observe&&secs.forEach(s=>new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)navA.forEach(a=>a.classList.toggle("on",a.hash==="#"+s.id))}),{rootMargin:"-45% 0px -50%"}).observe(s));
+
+/* ---------- Reveal + counters ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("v");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".rv").forEach(n=>io.observe(n));
+const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;co.unobserve(e.target);
+  e.target.querySelectorAll("[data-n]").forEach(b=>{const n=+b.dataset.n,s=b.dataset.s;if(reduce){b.dataset.fin=1;b.textContent=n+s;return}
+    const t0=performance.now(),D=1600;(function f(t){const k=Math.min((t-t0)/D,1);b.textContent=Math.round(n*(1-Math.pow(1-k,3)))+s;if(k<1)requestAnimationFrame(f);else{b.dataset.fin=1;b.textContent=b.dataset.n+b.dataset.s}})(t0)})}),{threshold:.4});
+co.observe($("#stats"));
+
+/* ---------- Resume download (generated from the verified content above) ---------- */
+$("#resume").onclick=()=>{
+  if(RESUME_URL){const a=document.createElement("a");a.href=RESUME_URL;a.download="";a.click();return}
+  const h=`<!DOCTYPE html><html lang="en"><meta charset="utf-8"><title>Deepjyoti Debnath — Resume</title><style>body{font:14px/1.55 Arial,sans-serif;max-width:780px;margin:32px auto;padding:0 20px;color:#111}h1{margin:0}h2{border-bottom:2px solid #2563eb;padding-bottom:3px;margin-top:22px;font-size:16px;text-transform:uppercase;color:#2563eb}h3{margin:12px 0 2px;font-size:14px}small{color:#555}</style>
+<h1>Deepjyoti Debnath</h1><p>AI/ML Engineer | Generative AI | LLMs | MLOps<br>deepjyotidebnathcse@gmail.com · +91 81162 65152 · West Bengal, India<br>${GH} · https://www.linkedin.com/in/deepjyoti-debnath-844279316/ · https://leetcode.com/u/deep23118</p>
+<h2>Summary</h2><p>AI/ML Engineer specializing in LLM systems, retrieval-augmented generation and production MLOps. Selected for Amazon ML Summer School 2026.</p>
+<h2>Experience</h2>${EXP.map(e=>`<h3>${esc(e[1])}</h3><small>${esc(e[0])}</small><ul>${e[2].map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`).join("")}
+<h2>Projects</h2>${PROJECTS.map(p=>`<h3>${esc(p.t)}</h3><p>${esc(p.d)} <small>(${p.s.join(", ")})</small></p>`).join("")}
+<h2>Skills</h2>${SKILLS.map(s=>`<p><b>${esc(s[0])}:</b> ${s[2].map(esc).join(", ")}</p>`).join("")}
+<h2>Education</h2><p><b>B.Tech, Computer Science &amp; Engineering</b> — Cooch Behar Govt. Engineering College (8.08, 2023–2027)<br><b>Higher Secondary (Science)</b> — Kashibati Vivekananda Vidyapith (97.2%, 2022)</p>
+<h2>Certifications</h2><ul><li>Complete Python with DSA Bootcamp (Udemy)</li><li>Generative AI with LangChain &amp; Hugging Face (Udemy)</li><li>Complete Data Science, ML, DL, NLP Bootcamp (Udemy)</li><li>Goldman Sachs Software Engineering Virtual Experience (Forage)</li></ul></html>`;
+  const u=URL.createObjectURL(new Blob([h],{type:"text/html"})),a=document.createElement("a");a.href=u;a.download="Deepjyoti_Debnath_Resume.html";document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1500)};
+
+/* ---------- Neural network canvas ---------- */
+(function(){const c=$("#net"),x=c.getContext("2d");let W,H,N=[],dpr=Math.min(devicePixelRatio||1,2);
+  function size(){W=c.clientWidth;H=c.clientHeight;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);
+    const n=Math.round(Math.min(70,W*H/16000));N=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,p:Math.random()>.7}))}
+  function draw(){x.clearRect(0,0,W,H);const L=Math.min(150,W/4);
+    for(let i=0;i<N.length;i++){const a=N[i];
+      for(let j=i+1;j<N.length;j++){const b=N[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+        if(d<L){x.strokeStyle=`rgba(${a.p||b.p?"139,92,246":"34,211,238"},${(1-d/L)*.35})`;x.lineWidth=1;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}}
+      x.fillStyle=a.p?"#8b5cf6":"#22d3ee";x.beginPath();x.arc(a.x,a.y,a.p?2.6:1.8,0,6.283);x.fill();
+      if(!reduce){a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>W)a.vx*=-1;if(a.y<0||a.y>H)a.vy*=-1}}
+    if(!reduce&&!document.hidden)requestAnimationFrame(draw)}
+  size();draw();let rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>{size();if(reduce)draw()},150)});
+  document.addEventListener("visibilitychange",()=>{if(!document.hidden&&!reduce)draw()})})();
+
+/* ---------- Social icons (reusable) ---------- */
+const ICON={gh:'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>',
+in:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9.75h4v11.5H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.82-2.06 3.75-2.06 4 0 4.74 2.63 4.74 6.05v5.91h-4v-5.24c0-1.25-.02-2.86-1.74-2.86-1.75 0-2.01 1.36-2.01 2.77v5.33h-4z"/></svg>'};
+document.querySelectorAll("[data-soc]").forEach(n=>{n.innerHTML=
+ `<a class="ib" href="${GH}" target="_blank" rel="noopener" aria-label="GitHub">${ICON.gh}</a><a class="ib" href="https://www.linkedin.com/in/deepjyoti-debnath-844279316/" target="_blank" rel="noopener" aria-label="LinkedIn">${ICON.in}</a>`+
+ (n.dataset.soc==="hero"?`<a class="ib" href="mailto:deepjyotidebnathcse@gmail.com" aria-label="Email">✉</a>`:"")});
+
+/* ---------- Typing effect ---------- */
+(function(){const T=["AI/ML Engineer | Generative AI | LLMs | MLOps","Building Intelligent Systems That Solve Real Problems."],e=$("#typed");if(reduce)return;
+ let i=0,k=0,del=false;
+ function s(){const w=T[i];
+  if(!del){e.textContent=w.slice(0,++k);if(k===w.length){del=true;return setTimeout(s,2600)}return setTimeout(s,50)}
+  e.textContent=w.slice(0,--k);if(k===0){del=false;i=(i+1)%T.length;return setTimeout(s,350)}setTimeout(s,24)}
+ setTimeout(()=>{e.textContent="";s()},1400)})();
+
+/* ---------- Live GitHub + LeetCode data ---------- */
+const GHU="deepjyotidebnath",LCU="deep23118";
+const store={get(k){try{const v=JSON.parse(localStorage.getItem(k));return v&&Date.now()-v.t<6e5?v.d:null}catch{return null}},set(k,d){try{localStorage.setItem(k,JSON.stringify({t:Date.now(),d}))}catch{}}};
+async function getJSON(u,ms=9000){const c=new AbortController(),t=setTimeout(()=>c.abort(),ms);try{const r=await fetch(u,{signal:c.signal});if(!r.ok)throw new Error(r.status);return await r.json()}finally{clearTimeout(t)}}
+function setStat(sel,n){const b=$(sel);b.dataset.n=n;b.dataset.s="";if(b.dataset.fin)b.textContent=n}
+const bars=rows=>`<div class="bars">${rows.map(([l,v,w])=>`<div class="br"><span>${esc(l)}</span><span class="tr2"><i data-w="${w}"></i></span><span>${v}</span></div>`).join("")}</div>`;
+const grow=r=>requestAnimationFrame(()=>requestAnimationFrame(()=>r.querySelectorAll("[data-w]").forEach(i=>i.style.width=i.dataset.w+"%")));
+const kp=(a)=>`<div class="kp">${a.map(([v,l])=>`<div><b>${v}</b><span>${l}</span></div>`).join("")}</div>`;
+function live(id,ok,txt){const t=$(id);t.textContent=txt;t.classList.toggle("ok",ok)}
+
+async function loadGitHub(){const box=$("#gh-body");
+ try{let d=store.get("gh2");
+  if(!d){const [u,r]=await Promise.all([getJSON(`https://api.github.com/users/${GHU}`),getJSON(`https://api.github.com/users/${GHU}/repos?per_page=100&sort=pushed`)]);
+   d={repos:u.public_repos,fol:u.followers,r:r.map(x=>({n:x.name,d:x.description,l:x.language,s:x.stargazers_count,f:x.fork,p:x.pushed_at,h:x.html_url}))};store.set("gh2",d)}
+  const own=d.r.filter(x=>!x.f),stars=own.reduce((a,x)=>a+x.s,0),lang={};
+  own.forEach(x=>x.l&&(lang[x.l]=(lang[x.l]||0)+1));
+  const top=Object.entries(lang).sort((a,b)=>b[1]-a[1]).slice(0,5),latest=[...own].sort((a,b)=>new Date(b.p)-new Date(a.p)).slice(0,4);
+  box.innerHTML=kp([[d.repos,"Public repos"],[stars,"Stars earned"],[top.length,"Languages"]])+
+   (top.length?`<div><p class="note" style="margin-bottom:10px">Top languages · by number of repositories</p>${bars(top.map(([l,c])=>[l,c,Math.round(c/top[0][1]*100)]))}</div>`:"")+
+   `<div><p class="note" style="margin-bottom:10px">Recently pushed</p><div class="rp">${latest.map(x=>`<a href="${x.h}" target="_blank" rel="noopener"><b>${esc(x.n)}</b><small>${esc(x.d||"No description")}${x.l?" · "+esc(x.l):""}${x.s?" · ★ "+x.s:""}</small></a>`).join("")}</div></div>`;
+  setStat("#st-gh",d.repos);live("#gh-live",true,"● Live · "+new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"}));grow(box)
+ }catch(e){live("#gh-live",false,"Offline");box.innerHTML=`<p class="note">Couldn’t reach the GitHub API just now (it allows 60 requests per hour per visitor). Open the profile above for the latest numbers (58 public repositories when last checked).</p>`}}
+
+/* LeetCode has no official CORS-enabled API, so community stats APIs are tried in order. */
+const LC=[
+ u=>getJSON(`https://leetcode-stats-api.herokuapp.com/${u}`).then(r=>{if(r.status&&r.status!=="success")throw 0;return{t:r.totalSolved,e:r.easySolved,m:r.mediumSolved,h:r.hardSolved,rk:r.ranking}}),
+ u=>getJSON(`https://alfa-leetcode-api.onrender.com/${u}/solved`).then(r=>({t:r.solvedProblem,e:r.easySolved,m:r.mediumSolved,h:r.hardSolved})),
+ u=>getJSON(`https://leetcode-api-faisalshohag.vercel.app/${u}`).then(r=>({t:r.totalSolved,e:r.easySolved,m:r.mediumSolved,h:r.hardSolved,rk:r.ranking}))];
+async function loadLeetCode(){const box=$("#lc-body");
+ try{let d=store.get("lc2");
+  if(!d){for(const f of LC){try{const x=await f(LCU);if(x&&x.t>0){d=x;break}}catch{}}if(!d)throw 0;store.set("lc2",d)}
+  const w=v=>Math.max(2,Math.round((v||0)/d.t*100));
+  box.innerHTML=kp([[d.t,"Problems solved"]].concat(d.rk?[["#"+Number(d.rk).toLocaleString(),"Global rank"]]:[]))+
+   `<div><p class="note" style="margin-bottom:10px">Solved by difficulty</p>${bars([["Easy",d.e,w(d.e)],["Medium",d.m,w(d.m)],["Hard",d.h,w(d.h)]])}</div>
+    <div id="lc-recent"></div><p class="note">Stats are fetched live from a public LeetCode stats API.</p>`;
+  getJSON(`https://alfa-leetcode-api.onrender.com/${LCU}/acSubmission?limit=5`).then(x=>{const a=(x.submission||[]).slice(0,5);if(!a.length)return;
+   $("#lc-recent").innerHTML=`<p class="note" style="margin-bottom:10px">Recently accepted</p><div class="rp">${a.map(q=>`<a href="https://leetcode.com/problems/${encodeURIComponent(q.titleSlug)}/" target="_blank" rel="noopener"><b>${esc(q.title)}</b><small>${esc(q.lang||"")}${q.timestamp?" · "+new Date(q.timestamp*1000).toLocaleDateString():""}</small></a>`).join("")}</div>`}).catch(()=>{});
+  setStat("#st-lc",d.t);live("#lc-live",true,"● Live · "+new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"}));grow(box)
+ }catch(e){live("#lc-live",false,"Offline");box.innerHTML=`<p class="note">Couldn’t reach a LeetCode stats API just now. Open the profile above for the latest numbers (600+ solved is the figure listed on the previous version of this site).</p>`}}
+loadGitHub();loadLeetCode();
+document.querySelectorAll("[data-rf]").forEach(b=>b.addEventListener("click",()=>{const k=b.dataset.rf;try{localStorage.removeItem(k+"2")}catch{}live("#"+k+"-live",false,"Loading…");k==="gh"?loadGitHub():loadLeetCode()}));
+    </script>
+</body>
+
+</html>
